@@ -2,6 +2,8 @@ export const siteContent = {
   fr: {
     features: 'Fonctionnalités',
     reviews: 'Avis',
+    reviewsSubtitle:
+      'Découvrez ce que nos clients satisfaits disent de nos services.',
     pricing: 'Tarifs',
     faqs: 'FAQ',
     login: 'English',
@@ -55,10 +57,17 @@ export const siteContent = {
           "Quel que soit le type de bâtiment – résidentiel, commercial, industriel ou institutionnel – nous avons l'expertise nécessaire pour fournir des solutions de plomberie adaptées à chaque besoin. Nos services incluent l'installation de systèmes complets, les réparations, ainsi que la maintenance préventive pour assurer une performance optimale des installations. De la maison individuelle aux infrastructures complexes, nous nous engageons à offrir une qualité de service irréprochable pour chaque projet.",
       },
     },
+    callToAction: {
+      title: "Besoin d'un plombier?",
+      description:
+        'Disponible 24/7 pour tous vos besoins en plomberie. Appelez-nous maintenant pour un service rapide et professionnel !',
+    },
   },
   en: {
     features: 'Features',
     reviews: 'Reviews',
+    reviewsSubtitle:
+      'See what our satisfied customers have to say about our services.',
     pricing: 'Pricing',
     faqs: 'FAQs',
     login: 'Français',
@@ -111,6 +120,11 @@ export const siteContent = {
         description:
           'Whatever the type of building – residential, commercial, industrial, or institutional – we have the expertise necessary to provide plumbing solutions tailored to each need. Our services include the installation of complete systems, repairs, as well as preventive maintenance to ensure optimal performance of the installations. From individual homes to complex infrastructures, we commit to providing an unbeatable quality of service for each project.',
       },
+    },
+    callToAction: {
+      title: 'Need a plumber?',
+      description:
+        'Available 24/7 for all your plumbing needs. Call us now for fast, professional service!',
     },
   },
 }

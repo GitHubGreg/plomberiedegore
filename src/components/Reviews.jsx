@@ -3,95 +3,135 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { useInView } from 'framer-motion'
-
+import { useLanguage } from '@/contexts/LanguageContext'
 import { Container } from '@/components/Container'
 
-const reviews = [
-  {
-    title: 'It really works.',
-    body: 'I downloaded Pocket today and turned $5000 into $25,000 in half an hour.',
-    author: 'CrazyInvestor',
-    rating: 5,
-  },
-  {
-    title: 'You need this app.',
-    body: 'I didn’t understand the stock market at all before Pocket. I still don’t, but at least I’m rich now.',
-    author: 'CluelessButRich',
-    rating: 5,
-  },
-  {
-    title: 'This shouldn’t be legal.',
-    body: 'Pocket makes it so easy to win big in the stock market that I can’t believe it’s actually legal.',
-    author: 'LivingDaDream',
-    rating: 5,
-  },
-  {
-    title: 'Screw financial advisors.',
-    body: 'I barely made any money investing in mutual funds. With Pocket, I’m doubling my net-worth every single month.',
-    author: 'JordanBelfort1962',
-    rating: 5,
-  },
-  {
-    title: 'I love it!',
-    body: 'I started providing insider information myself and now I get new insider tips every 5 minutes. I don’t even have time to act on all of them. New Lamborghini is being delivered next week!',
-    author: 'MrBurns',
-    rating: 5,
-  },
-  {
-    title: 'Too good to be true.',
-    body: 'I was making money so fast with Pocket that it felt like a scam. But I sold my shares and withdrew the money and it’s really there, right in my bank account. This app is crazy!',
-    author: 'LazyRich99',
-    rating: 5,
-  },
-  {
-    title: 'Wish I could give 6 stars',
-    body: 'This is literally the most important app you will ever download in your life. Get on this before it’s so popular that everyone else is getting these tips too.',
-    author: 'SarahLuvzCash',
-    rating: 5,
-  },
-  {
-    title: 'Bought an island.',
-    body: 'Yeah, you read that right. Want your own island too? Get Pocket.',
-    author: 'ScroogeMcduck',
-    rating: 5,
-  },
-  {
-    title: 'No more debt!',
-    body: 'After 2 weeks of trading on Pocket I was debt-free. Why did I even go to school at all when Pocket exists?',
-    author: 'BruceWayne',
-    rating: 5,
-  },
-  {
-    title: 'I’m 13 and I’m rich.',
-    body: 'I love that with Pocket’s transaction anonymization I could sign up and start trading when I was 12 years old. I had a million dollars before I had armpit hair!',
-    author: 'RichieRich',
-    rating: 5,
-  },
-  {
-    title: 'Started an investment firm.',
-    body: 'I charge clients a 3% management fee and just throw all their investments into Pocket. Easy money!',
-    author: 'TheCountOfMonteChristo',
-    rating: 5,
-  },
-  {
-    title: 'It’s like a superpower.',
-    body: 'Every tip Pocket has sent me has paid off. It’s like playing Blackjack but knowing exactly what card is coming next!',
-    author: 'ClarkKent',
-    rating: 5,
-  },
-  {
-    title: 'Quit my job.',
-    body: 'I downloaded Pocket three days ago and quit my job today. I can’t believe no one else thought to build a stock trading app that works this way!',
-    author: 'GeorgeCostanza',
-    rating: 5,
-  },
-  {
-    title: 'Don’t download this app',
-    body: 'Unless you want to have the best life ever! I am literally writing this from a yacht.',
-    author: 'JeffBezos',
-    rating: 5,
-  },
-]
+const reviewsContent = {
+  fr: [
+    {
+      title: 'Service rapide et professionnel',
+      body: "Une fuite d'eau urgente à 23h, ils sont venus en 30 minutes. Travail impeccable et prix raisonnable. Je recommande fortement!",
+      author: 'Marcel T.',
+      rating: 5,
+    },
+    {
+      title: 'Excellente équipe',
+      body: 'Ils ont refait toute la plomberie de ma salle de bain. Propre, efficace et dans les temps. Vraiment satisfait du résultat.',
+      author: 'Sylvie B.',
+      rating: 5,
+    },
+    {
+      title: 'Travail de qualité',
+      body: "Mon drain était complètement bouché, ils ont utilisé une caméra pour trouver le problème et l'ont réglé rapidement. Très professionnel!",
+      author: 'Jean-Pierre L.',
+      rating: 5,
+    },
+    {
+      title: 'Service fiable',
+      body: 'Deuxième fois que je fais appel à eux pour des réparations. Toujours ponctuels et efficaces. Prix honnêtes.',
+      author: 'Françoise M.',
+      rating: 5,
+    },
+    {
+      title: 'Experts en plomberie',
+      body: "Installation complète pour ma nouvelle maison. Tout a été fait selon les normes et ils ont même donné des conseils utiles pour l'entretien.",
+      author: 'Robert D.',
+      rating: 5,
+    },
+    {
+      title: "Service d'urgence excellent",
+      body: "Un dégât d'eau en pleine nuit, ils sont venus tout de suite. Très rassurant d'avoir une équipe aussi compétente!",
+      author: 'Louise P.',
+      rating: 5,
+    },
+    {
+      title: 'Recommandé à 100%',
+      body: 'Remplacement de chauffe-eau fait proprement et rapidement. Excellent service client et suivi.',
+      author: 'Michel G.',
+      rating: 5,
+    },
+    {
+      title: 'Très satisfait',
+      body: "Installation d'une pompe de puisard. Travail soigné et bien expliqué. Je recommande!",
+      author: 'Pierre C.',
+      rating: 5,
+    },
+    {
+      title: 'Service exceptionnel',
+      body: 'Rénovation complète de salle de bain. Équipe professionnelle et travail de qualité. Très content du résultat!',
+      author: 'André B.',
+      rating: 5,
+    },
+    {
+      title: 'Excellent travail',
+      body: "Problème de pression d'eau réglé rapidement. Service courtois et professionnel. Prix raisonnable.",
+      author: 'Marie-Claude R.',
+      rating: 5,
+    },
+  ],
+  en: [
+    {
+      title: 'Fast and professional service',
+      body: 'Emergency water leak at 11 PM, they came within 30 minutes. Impeccable work and reasonable price. Highly recommend!',
+      author: 'Marcel T.',
+      rating: 5,
+    },
+    {
+      title: 'Excellent team',
+      body: 'They redid all the plumbing in my bathroom. Clean, efficient and on time. Really satisfied with the result.',
+      author: 'Sylvie B.',
+      rating: 5,
+    },
+    {
+      title: 'Quality work',
+      body: 'My drain was completely blocked, they used a camera to find the problem and fixed it quickly. Very professional!',
+      author: 'Jean-Pierre L.',
+      rating: 5,
+    },
+    {
+      title: 'Reliable service',
+      body: 'Second time using them for repairs. Always punctual and efficient. Honest pricing.',
+      author: 'Françoise M.',
+      rating: 5,
+    },
+    {
+      title: 'Plumbing experts',
+      body: 'Complete installation for my new house. Everything was done to code and they even gave useful maintenance tips.',
+      author: 'Robert D.',
+      rating: 5,
+    },
+    {
+      title: 'Excellent emergency service',
+      body: 'Had a water damage in the middle of the night, they came right away. Very reassuring to have such a competent team!',
+      author: 'Louise P.',
+      rating: 5,
+    },
+    {
+      title: '100% Recommended',
+      body: 'Water heater replacement done cleanly and quickly. Excellent customer service and follow-up.',
+      author: 'Michel G.',
+      rating: 5,
+    },
+    {
+      title: 'Very satisfied',
+      body: 'Sump pump installation. Careful work and well explained. I recommend!',
+      author: 'Pierre C.',
+      rating: 5,
+    },
+    {
+      title: 'Exceptional service',
+      body: 'Complete bathroom renovation. Professional team and quality work. Very happy with the result!',
+      author: 'André B.',
+      rating: 5,
+    },
+    {
+      title: 'Excellent work',
+      body: 'Water pressure problem fixed quickly. Courteous and professional service. Reasonable price.',
+      author: 'Marie-Claude R.',
+      rating: 5,
+    },
+  ],
+}
 
 function StarIcon(props) {
   return (
@@ -200,8 +240,10 @@ function ReviewColumn({ reviews, className, reviewClassName, msPerPixel = 0 }) {
 }
 
 function ReviewGrid() {
+  const { language } = useLanguage()
   let containerRef = useRef(null)
   let isInView = useInView(containerRef, { once: true, amount: 0.4 })
+  let reviews = language === 'en' ? reviewsContent.en : reviewsContent.fr
   let columns = splitArray(reviews, 3)
   let column1 = columns[0]
   let column2 = columns[1]
@@ -247,21 +289,23 @@ function ReviewGrid() {
 }
 
 export function Reviews() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="reviews"
       aria-labelledby="reviews-title"
-      className="pb-16 pt-20 sm:pb-24 sm:pt-32"
+      className="bg-gray-50 pb-16 pt-20 sm:pb-24 sm:pt-32"
     >
       <Container>
         <h2
           id="reviews-title"
           className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
         >
-          Everyone is changing their life with Pocket.
+          {t('reviews')}
         </h2>
         <p className="mt-2 text-lg text-gray-600 sm:text-center">
-          Thousands of people have doubled their net-worth in the last 30 days.
+          {t('reviewsSubtitle')}
         </p>
         <ReviewGrid />
       </Container>
