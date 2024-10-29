@@ -1,27 +1,22 @@
 import { Inter } from 'next/font/google'
-import clsx from 'clsx'
+import { LanguageProvider } from '@/contexts/LanguageContext'
+import { siteContent } from '@/content/siteContent'
 
 import '@/styles/tailwind.css'
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-})
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: {
-    template: '%s - Pocket',
-    default: 'Pocket - Plomberie de Gore',
-  },
-  description:
-    'By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses.',
+  title: 'Plomberie de Gore',
+  description: siteContent.fr.description,
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={clsx('bg-gray-50 antialiased', inter.variable)}>
-      <body>{children}</body>
+    <html lang="fr" className={inter.className}>
+      <body>
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   )
 }

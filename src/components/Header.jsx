@@ -118,12 +118,9 @@ export function Header() {
                             <MobileNavLink href="/#faqs">FAQs</MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            <button
-                              onClick={toggleLanguage}
-                              className="inline-flex items-center justify-center rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-                            >
+                            <Button onClick={toggleLanguage} variant="outline">
                               {t('login')}
-                            </button>
+                            </Button>
                             <Button href="#">Download the app</Button>
                           </div>
                         </PopoverPanel>
@@ -133,12 +130,13 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <button
+            <Button
               onClick={toggleLanguage}
-              className="hidden items-center justify-center rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 lg:inline-flex"
+              variant="outline"
+              className="hidden lg:block"
             >
               {t('login')}
-            </button>
+            </Button>
             <Button href="#" className="hidden lg:block">
               Download
             </Button>

@@ -1,25 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState } from 'react'
-
-const translations = {
-  en: {
-    features: 'Features',
-    reviews: 'Reviews',
-    pricing: 'Pricing',
-    faqs: 'FAQs',
-    login: 'Français',
-    // Add other translations here
-  },
-  fr: {
-    features: 'Fonctionnalités',
-    reviews: 'Avis',
-    pricing: 'Tarifs',
-    faqs: 'FAQ',
-    login: 'English',
-    // Add other translations here
-  },
-}
+import { siteContent } from '@/content/siteContent'
 
 const LanguageContext = createContext()
 
@@ -30,7 +12,22 @@ export function LanguageProvider({ children }) {
     setLanguage((current) => (current === 'fr' ? 'en' : 'fr'))
   }
 
-  const t = (key) => translations[language][key]
+  const t = (key) => {
+    // Split the key by dots to handle nested objects
+    const keys = key.split('.')
+    let value = siteContent[language]
+
+    // Traverse the nested objects
+    for (const k of keys) {
+      value = value?.[k]
+      if (value === undefined) {
+        console.warn(`Translation missing for key: ${key}`)
+        return key
+      }
+    }
+
+    return value
+  }
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
