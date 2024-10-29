@@ -13,6 +13,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 function MenuIcon(props) {
   return (
@@ -51,6 +52,8 @@ function MobileNavLink(props) {
 }
 
 export function Header() {
+  const { t, toggleLanguage } = useLanguage()
+
   return (
     <header>
       <nav>
@@ -115,9 +118,12 @@ export function Header() {
                             <MobileNavLink href="/#faqs">FAQs</MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            <Button href="/login" variant="outline">
-                              Log in
-                            </Button>
+                            <button
+                              onClick={toggleLanguage}
+                              className="inline-flex items-center justify-center rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                            >
+                              {t('login')}
+                            </button>
                             <Button href="#">Download the app</Button>
                           </div>
                         </PopoverPanel>
@@ -127,9 +133,12 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <Button href="/login" variant="outline" className="hidden lg:block">
-              Log in
-            </Button>
+            <button
+              onClick={toggleLanguage}
+              className="hidden items-center justify-center rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 lg:inline-flex"
+            >
+              {t('login')}
+            </button>
             <Button href="#" className="hidden lg:block">
               Download
             </Button>
