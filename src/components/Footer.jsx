@@ -7,6 +7,7 @@ import { TextField } from '@/components/Fields'
 import { Logomark } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 import qrCode from '@/images/qr-code.svg'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 function QrCodeBorder(props) {
   return (
@@ -21,6 +22,16 @@ function QrCodeBorder(props) {
 }
 
 export function Footer() {
+  let t = (text) => text // Default fallback if context fails
+  try {
+    const context = useLanguage()
+    if (context && context.t) {
+      t = context.t
+    }
+  } catch (error) {
+    console.warn('Language context not available:', error)
+  }
+
   return (
     <footer className="border-t border-gray-200">
       <Container>
@@ -71,7 +82,8 @@ export function Footer() {
             </Button>
           </form>
           <p className="mt-6 text-sm text-gray-500 md:mt-0">
-            &copy; Copyright {new Date().getFullYear()}. All rights reserved.
+            {t('copyright')} {new Date().getFullYear()}.{' '}
+            {t('all_rights_reserved')}
           </p>
         </div>
       </Container>

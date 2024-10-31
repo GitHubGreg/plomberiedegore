@@ -6,27 +6,19 @@ import { siteContent } from '@/content/siteContent'
 const LanguageContext = createContext()
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState('fr') // Default to French
+  const [language, setLanguage] = useState('fr')
 
   const toggleLanguage = () => {
-    setLanguage((current) => (current === 'fr' ? 'en' : 'fr'))
+    setLanguage((prev) => (prev === 'fr' ? 'en' : 'fr'))
   }
 
   const t = (key) => {
-    // Split the key by dots to handle nested objects
     const keys = key.split('.')
     let value = siteContent[language]
-
-    // Traverse the nested objects
     for (const k of keys) {
-      value = value?.[k]
-      if (value === undefined) {
-        console.warn(`Translation missing for key: ${key}`)
-        return key
-      }
+      value = value[k]
     }
-
-    return value
+    return value || key
   }
 
   return (

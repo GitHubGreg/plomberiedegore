@@ -62,6 +62,8 @@ export const siteContent = {
       description:
         'Disponible 24/7 pour tous vos besoins en plomberie. Appelez-nous maintenant pour un service rapide et professionnel !',
     },
+    copyright: "© Droits d'auteur",
+    all_rights_reserved: 'Tous droits réservés',
   },
   en: {
     features: 'Features',
@@ -126,5 +128,7 @@ export const siteContent = {
       description:
         'Available 24/7 for all your plumbing needs. Call us now for fast, professional service!',
     },
+    copyright: '© Copyright',
+    all_rights_reserved: 'All rights reserved',
   },
 }
