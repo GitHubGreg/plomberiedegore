@@ -83,9 +83,7 @@ function ServiceSection({ service, image, isEven }) {
       className="relative scroll-mt-24 overflow-hidden py-24"
     >
       <Container className="relative">
-        <div
-          className={`lg:grid lg:grid-cols-2 lg:gap-16 ${isEven ? 'lg:items-center' : ''}`}
-        >
+        <div className={`lg:grid lg:grid-cols-2 lg:gap-16`}>
           <div className={`relative z-10 ${isEven ? 'lg:order-2' : ''}`}>
             <h2 className="text-3xl font-medium tracking-tight text-gray-900">
               {t(`services.${service}.title`)}

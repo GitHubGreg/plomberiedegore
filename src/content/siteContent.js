@@ -8,7 +8,7 @@ export const siteContent = {
     faqs: 'FAQ',
     login: 'English',
     description:
-      "Que ce soit pour une installation neuve, des réparations urgentes ou de l'entretien régulier, Plomberie de Gore offre des services fiables et professionnels pour les clients résidentiels, commerciaux et industriels. Du débouchage des canalisations aux installations complexes, notre équipe qualifiée est à votre service 24/7 pour assurer le bon fonctionnement de votre plomberie. Faites confiance à notre expertise pour des solutions durables et efficaces. Appelez-nous dès maintenant pour un service rapide et personnalisé !",
+      "Que ce soit pour une installation neuve, des réparations urgentes ou de l'entretien régulier, Plomberie de Gore offre des services fiables et professionnels pour les clients résidentiels, commerciaux et industriels. Du dé bouchage des canalisations aux installations complexes, notre équipe qualifiée est à votre service 24/7 pour assurer le bon fonctionnement de votre plomberie. Faites confiance à notre expertise pour des solutions durables et efficaces. Appelez-nous dès maintenant pour un service rapide et personnalisé !",
     services: {
       plumbing: {
         title: 'Plomberie',
