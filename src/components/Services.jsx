@@ -6,8 +6,10 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { Container } from '@/components/Container'
 
 function BackgroundIllustration() {
-  const gridSize = 20 // Number of squares in each row/column
+  const gridSize = 80 // Increased grid size for more squares
   const squares = []
+  const squareSize = 10 // Smaller squares (was 40)
+  const spacing = 12 // Tighter spacing (was 50)
 
   // Generate grid of squares
   for (let i = 0; i < gridSize; i++) {
@@ -15,10 +17,10 @@ function BackgroundIllustration() {
       squares.push(
         <rect
           key={`${i}-${j}`}
-          x={i * 50}
-          y={j * 50}
-          width="40"
-          height="40"
+          x={i * spacing}
+          y={j * spacing}
+          width={squareSize}
+          height={squareSize}
           className={`animate-flicker`}
           fill="#06b6d4"
           style={{
@@ -32,7 +34,7 @@ function BackgroundIllustration() {
   return (
     <div className="absolute inset-0 -z-10 h-full w-full">
       <svg
-        viewBox={`0 0 ${gridSize * 50} ${gridSize * 50}`}
+        viewBox={`0 0 ${gridSize * spacing} ${gridSize * spacing}`}
         className="h-full w-full opacity-[0.15]"
         preserveAspectRatio="xMidYMid slice"
       >
