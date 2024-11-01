@@ -5,40 +5,70 @@ import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { Container } from '@/components/Container'
 
-function BackgroundIllustration() {
-  const gridSize = 80 // Increased grid size for more squares
-  const squares = []
-  const squareSize = 10 // Smaller squares (was 40)
-  const spacing = 12 // Tighter spacing (was 50)
-
-  // Generate grid of squares
-  for (let i = 0; i < gridSize; i++) {
-    for (let j = 0; j < gridSize; j++) {
-      squares.push(
-        <rect
-          key={`${i}-${j}`}
-          x={i * spacing}
-          y={j * spacing}
-          width={squareSize}
-          height={squareSize}
-          className={`animate-flicker`}
-          fill="#06b6d4"
-          style={{
-            animationDelay: `${(i + j) * 0.1}s`,
-          }}
-        />,
-      )
-    }
-  }
+function BackgroundIllustration(props) {
+  let id = useId()
 
   return (
-    <div className="absolute inset-0 -z-10 h-full w-full">
+    <div {...props}>
       <svg
-        viewBox={`0 0 ${gridSize * spacing} ${gridSize * spacing}`}
-        className="h-full w-full opacity-[0.15]"
-        preserveAspectRatio="xMidYMid slice"
+        viewBox="0 0 500 500"
+        fill="none"
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full animate-spin-slow"
       >
-        {squares}
+        <path
+          d="M250 250m-200 0a200 200 0 1 0 400 0a200 200 0 1 0 -400 0"
+          stroke="#D4D4D4"
+          strokeOpacity="0.7"
+        />
+        <path
+          d="M250 50A200 200 0 0 1 250 450"
+          stroke={`url(#${id}-gradient-1)`}
+          strokeLinecap="round"
+        />
+        <defs>
+          <linearGradient
+            id={`${id}-gradient-1`}
+            x1="250"
+            y1="50"
+            x2="250"
+            y2="450"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#06b6d4" />
+            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <svg
+        viewBox="0 0 500 500"
+        fill="none"
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full animate-spin-reverse-slower"
+      >
+        <path
+          d="M250 250m-150 0a150 150 0 1 0 300 0a150 150 0 1 0 -300 0"
+          stroke="#D4D4D4"
+          strokeOpacity="0.7"
+        />
+        <path
+          d="M250 100A150 150 0 0 1 250 400"
+          stroke={`url(#${id}-gradient-2)`}
+          strokeLinecap="round"
+        />
+        <defs>
+          <linearGradient
+            id={`${id}-gradient-2`}
+            x1="250"
+            y1="100"
+            x2="250"
+            y2="400"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#06b6d4" />
+            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+          </linearGradient>
+        </defs>
       </svg>
     </div>
   )
@@ -66,6 +96,7 @@ function ServiceSection({ service, image, isEven }) {
           <div
             className={`relative mt-10 lg:mt-0 ${isEven ? 'lg:order-1' : ''}`}
           >
+            <BackgroundIllustration className="absolute left-1/2 top-4 h-[500px] w-[500px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
             <div className="-mx-4 px-9 sm:mx-0 lg:absolute lg:-inset-x-10 lg:-bottom-20 lg:-top-10 lg:px-0 lg:pt-10 xl:-bottom-32">
               <div className="mx-auto flex max-w-[366px] items-center justify-center">
                 <Image
@@ -99,7 +130,6 @@ export function Services() {
 
   return (
     <div className="relative min-h-screen">
-      <BackgroundIllustration />
       <div className="relative z-10 space-y-4">
         {services.map((service, index) => (
           <ServiceSection
