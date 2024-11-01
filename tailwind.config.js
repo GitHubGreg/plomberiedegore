@@ -29,6 +29,7 @@ module.exports = {
         'spin-reverse': 'spin-reverse 1s linear infinite',
         'spin-reverse-slow': 'spin-reverse 4s linear infinite',
         'spin-reverse-slower': 'spin-reverse 6s linear infinite',
+        flicker: 'flicker 3s ease-in-out infinite',
       },
       borderRadius: {
         '4xl': '2rem',
@@ -58,6 +59,10 @@ module.exports = {
           to: {
             transform: 'rotate(-360deg)',
           },
+        },
+        flicker: {
+          '0%, 100%': { opacity: '0' },
+          '50%': { opacity: '1' },
         },
       },
       maxWidth: {
