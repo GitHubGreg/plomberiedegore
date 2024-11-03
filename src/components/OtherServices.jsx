@@ -24,13 +24,13 @@ export function OtherServices() {
   }))
 
   return (
-    <Container className="mt-24 sm:mt-32">
-      <h2 className="text-center text-2xl font-medium tracking-tight text-gray-900 lg:text-left">
+    <Container>
+      <h2 className="text-2xl font-medium tracking-tight text-gray-900">
         {isEnglish
           ? `Other plumbing services in ${city}`
           : `Autres services de plomberie à ${city}`}
       </h2>
-      <div className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-4 gap-y-4 lg:mx-0 lg:justify-start">
+      <div className="mt-8 flex flex-wrap gap-x-4 gap-y-4">
         {otherServices.map((service) => (
           <Link
             key={service.id}

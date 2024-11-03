@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { Container } from '@/components/Container'
 import { SERVICES } from '@/lib/constants'
+import { OtherServices } from '@/components/OtherServices'
 
 function BackgroundIllustration(props) {
   let id = useId()
