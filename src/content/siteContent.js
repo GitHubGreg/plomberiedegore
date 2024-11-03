@@ -1,5 +1,6 @@
 export const siteContent = {
   fr: {
+    title: 'Plomberie de Gore',
     features: 'Fonctionnalités',
     reviews: 'Avis',
     reviewsSubtitle:
@@ -62,10 +63,11 @@ export const siteContent = {
       description:
         'Disponible 24/7 pour tous vos besoins en plomberie. Appelez-nous maintenant pour un service rapide et professionnel !',
     },
-    copyright: "© Droits d'auteur",
-    all_rights_reserved: 'Tous droits réservés',
+    copyright: "Droits d'auteur",
+    all_rights_reserved: 'Tous droits réservés.',
   },
   en: {
+    title: 'Gore Plumbing',
     features: 'Features',
     reviews: 'Reviews',
     reviewsSubtitle:
@@ -129,6 +131,6 @@ export const siteContent = {
         'Available 24/7 for all your plumbing needs. Call us now for fast, professional service!',
     },
     copyright: '© Copyright',
-    all_rights_reserved: 'All rights reserved',
+    all_rights_reserved: 'All rights reserved.',
   },
 }

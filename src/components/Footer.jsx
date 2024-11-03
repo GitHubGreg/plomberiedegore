@@ -37,9 +37,15 @@ export function Footer() {
   return (
     <footer className="border-t border-gray-200">
       <Container>
-        <div className="flex flex-col items-start justify-between gap-y-12 pb-6 pt-16 lg:flex-row lg:items-start lg:py-16">
+        <div className="flex min-h-[400px] flex-col gap-y-12 pb-6 pt-16 lg:flex-row lg:py-16">
           {/* Left side - Services */}
-          <div>
+          <div className="flex-none lg:w-64">
+            <div className="mb-6 flex items-center text-gray-900">
+              <div className="mr-4 text-left">
+                <p className="text-base font-semibold">{t('title')}</p>
+              </div>
+            </div>
+
             <nav className="flex flex-col gap-4">
               {services.map((service) => (
                 <Link
@@ -54,52 +60,21 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Right side - Title and Map */}
-          <div className="flex flex-col items-end">
-            <div className="mb-6 flex items-center text-gray-900">
-              <div className="mr-4 text-right">
-                <p className="text-base font-semibold">Pocket</p>
-                <p className="mt-1 text-sm">Plomberie de Gore</p>
-              </div>
-              <Logomark className="h-10 w-10 flex-none fill-cyan-500" />
-            </div>
-
-            <div className="mb-6 h-[300px] w-full max-w-[400px] overflow-hidden rounded-lg">
-              <iframe
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=6+Rue+Claudine,Gore,QC+J0V+1K0`}
-              ></iframe>
-            </div>
+          {/* Right side - Map */}
+          <div className="h-[400px] lg:h-auto lg:flex-1">
+            <iframe
+              className="h-full w-full rounded-lg"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=6+Rue+Claudine,Gore,QC+J0V+1K0`}
+            ></iframe>
           </div>
         </div>
-        <div className="flex flex-col items-center border-t border-gray-200 pb-12 pt-8 md:flex-row-reverse md:justify-between md:pt-6">
-          <form className="flex w-full justify-center md:w-auto">
-            <TextField
-              type="email"
-              aria-label={isEnglish ? 'Email address' : 'Adresse courriel'}
-              placeholder={isEnglish ? 'Email address' : 'Adresse courriel'}
-              autoComplete="email"
-              required
-              className="w-60 min-w-0 shrink"
-            />
-            <Button type="submit" color="cyan" className="ml-4 flex-none">
-              <span className="hidden lg:inline">
-                {isEnglish
-                  ? 'Join our newsletter'
-                  : 'Rejoignez notre infolettre'}
-              </span>
-              <span className="lg:hidden">
-                {isEnglish ? 'Join newsletter' : 'Rejoindre'}
-              </span>
-            </Button>
-          </form>
-          <p className="mt-6 text-sm text-gray-500 md:mt-0">
-            {t('copyright')} {new Date().getFullYear()}.{' '}
+        <div className="flex justify-center border-t border-gray-200 pb-12 pt-8">
+          <p className="text-center text-sm text-gray-500">
+            ©{new Date().getFullYear()} {t('title')}.{' '}
             {t('all_rights_reserved')}
           </p>
         </div>
