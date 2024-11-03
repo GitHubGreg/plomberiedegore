@@ -117,11 +117,13 @@ function ServiceSection({ service, image, isEven }) {
   )
 }
 
-export function Services() {
+export function Services({ serviceId = null }) {
   return (
     <div className="relative min-h-screen">
       <div className="relative z-10 space-y-4">
-        {SERVICES.map((service, index) => (
+        {SERVICES.filter(
+          (service) => !serviceId || service.id === serviceId,
+        ).map((service, index) => (
           <ServiceSection
             key={service.id}
             service={service.id}

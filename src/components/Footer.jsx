@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { SERVICES } from '@/lib/constants'
+import { SERVICES, CITIES } from '@/lib/constants'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { TextField } from '@/components/Fields'
@@ -36,15 +36,24 @@ export function Footer() {
             </div>
 
             <nav className="flex flex-col gap-4">
-              {SERVICES.map((service) => (
-                <Link
-                  key={service.id}
-                  href={`/#${service.id}`}
-                  className="text-sm text-gray-700 hover:text-gray-900"
-                >
-                  {t(`services.${service.id}.title`)}{' '}
-                  {isEnglish ? 'in Gore' : 'à Gore'}
-                </Link>
+              {CITIES.map((city) => (
+                <div key={city.id} className="mb-6">
+                  <h3 className="text-sm font-semibold text-gray-900">
+                    {city.id}
+                  </h3>
+                  <nav className="mt-3 flex flex-col gap-2">
+                    {SERVICES.map((service) => (
+                      <Link
+                        key={service.id}
+                        href={`/${city.slug}/${service.slug}`}
+                        className="text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        {t(`services.${service.id}.title`)}{' '}
+                        {isEnglish ? `in ${city.id}` : `à ${city.id}`}
+                      </Link>
+                    ))}
+                  </nav>
+                </div>
               ))}
             </nav>
           </div>

@@ -8,3 +8,17 @@ export const SERVICES = [
   { id: 'pumps', slug: 'water-pump' },
   { id: 'wells', slug: 'water-well' },
 ]
+
+export const CITIES = [
+  { id: 'Lachute', slug: 'lachute' },
+  { id: 'Wentworth North', slug: 'wentworth-north' },
+  { id: 'Val-David', slug: 'val-david' },
+  { id: 'Prévost', slug: 'prevost' },
+  { id: 'Gore', slug: 'gore' },
+  { id: 'Saint-Sauveur', slug: 'saint-sauveur' },
+  { id: 'Sainte-Adèle', slug: 'sainte-adele' },
+  { id: 'Piedmont', slug: 'piedmont' },
+  { id: 'Brownsburg', slug: 'brownsburg' },
+  { id: 'Saint-Jérôme', slug: 'saint-jerome' },
+  { id: 'Morin-Heights', slug: 'morin-heights' },
+]

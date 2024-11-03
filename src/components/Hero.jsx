@@ -3,10 +3,11 @@
 import { useId } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { SERVICES } from '@/lib/constants'
+import { SERVICES, CITIES } from '@/lib/constants'
 import logo from '@/images/logo.svg'
 
 function BackgroundIllustration(props) {
@@ -78,23 +79,25 @@ function BackgroundIllustration(props) {
   )
 }
 
-function ServiceButton({ serviceId, title }) {
-  const scrollToService = () => {
-    document.getElementById(serviceId)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
+function ServiceButton({ serviceId, title, slug, isEnglish }) {
   return (
-    <button
-      onClick={scrollToService}
-      className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
-    >
-      {title}
-    </button>
+    <div className="flex flex-col gap-2">
+      {CITIES.map((city) => (
+        <Link
+          key={city.id}
+          href={`/${city.slug}/${slug}`}
+          className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+        >
+          {title} {isEnglish ? `in ${city.id}` : `à ${city.id}`}
+        </Link>
+      ))}
+    </div>
   )
 }
 
 export function Hero() {
   const { t } = useLanguage()
+  const isEnglish = t('login') === 'Français'
 
   const services = SERVICES.map((service) => ({
     id: service.id,
@@ -142,6 +145,8 @@ export function Hero() {
                   key={service.id}
                   serviceId={service.id}
                   title={service.title}
+                  slug={SERVICES.find((s) => s.id === service.id).slug}
+                  isEnglish={isEnglish}
                 />
               ))}
             </div>
