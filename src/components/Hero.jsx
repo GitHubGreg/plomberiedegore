@@ -6,6 +6,7 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { SERVICES } from '@/lib/constants'
 import logo from '@/images/logo.svg'
 
 function BackgroundIllustration(props) {
@@ -95,16 +96,10 @@ function ServiceButton({ serviceId, title }) {
 export function Hero() {
   const { t } = useLanguage()
 
-  const services = [
-    { id: 'plumbing', title: t('services.plumbing.title') },
-    { id: 'newConstruction', title: t('services.newConstruction.title') },
-    { id: 'renovation', title: t('services.renovation.title') },
-    { id: 'excavation', title: t('services.excavation.title') },
-    { id: 'drainCleaning', title: t('services.drainCleaning.title') },
-    { id: 'emergency', title: t('services.emergency.title') },
-    { id: 'pumps', title: t('services.pumps.title') },
-    { id: 'wells', title: t('services.wells.title') },
-  ]
+  const services = SERVICES.map((service) => ({
+    id: service.id,
+    title: t(`services.${service.id}.title`),
+  }))
 
   return (
     <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">

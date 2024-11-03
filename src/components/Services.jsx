@@ -4,6 +4,7 @@ import { useId } from 'react'
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { Container } from '@/components/Container'
+import { SERVICES } from '@/lib/constants'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -117,25 +118,14 @@ function ServiceSection({ service, image, isEven }) {
 }
 
 export function Services() {
-  const services = [
-    { id: 'plumbing', image: '/images/services/plumbing.jpg' },
-    { id: 'newConstruction', image: '/images/services/new-construction.jpg' },
-    { id: 'renovation', image: '/images/services/renovation.jpg' },
-    { id: 'excavation', image: '/images/services/excavation.jpg' },
-    { id: 'drainCleaning', image: '/images/services/drain-cleaning.jpg' },
-    { id: 'emergency', image: '/images/services/emergency-plumbing.jpg' },
-    { id: 'pumps', image: '/images/services/water-pump.jpg' },
-    { id: 'wells', image: '/images/services/water-well.jpg' },
-  ]
-
   return (
     <div className="relative min-h-screen">
       <div className="relative z-10 space-y-4">
-        {services.map((service, index) => (
+        {SERVICES.map((service, index) => (
           <ServiceSection
             key={service.id}
             service={service.id}
-            image={service.image}
+            image={`/images/services/${service.slug}.jpg`}
             isEven={index % 2 === 1}
           />
         ))}

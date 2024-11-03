@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-
+import { SERVICES } from '@/lib/constants'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { TextField } from '@/components/Fields'
@@ -21,17 +21,6 @@ export function Footer() {
     console.warn('Language context not available:', error)
   }
 
-  const services = [
-    'plumbing',
-    'newConstruction',
-    'renovation',
-    'excavation',
-    'drainCleaning',
-    'emergency',
-    'pumps',
-    'wells',
-  ]
-
   const isEnglish = t('login') === 'Français'
 
   return (
@@ -47,13 +36,13 @@ export function Footer() {
             </div>
 
             <nav className="flex flex-col gap-4">
-              {services.map((service) => (
+              {SERVICES.map((service) => (
                 <Link
-                  key={service}
-                  href={`/#${service}`}
+                  key={service.id}
+                  href={`/#${service.id}`}
                   className="text-sm text-gray-700 hover:text-gray-900"
                 >
-                  {t(`services.${service}.title`)}{' '}
+                  {t(`services.${service.id}.title`)}{' '}
                   {isEnglish ? 'in Gore' : 'à Gore'}
                 </Link>
               ))}

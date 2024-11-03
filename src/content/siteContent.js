@@ -36,7 +36,7 @@ export const siteContent = {
         description:
           "Les obstructions de tuyaux peuvent provoquer des fuites et des dégâts d'eau importants. Nous intervenons rapidement pour déboucher et nettoyer les canalisations, en utilisant des techniques avancées telles que le débouchage par haute pression et les caméras d'inspection pour localiser précisément les blocages. Que le problème soit mineur ou majeur, nous avons les solutions adaptées pour un écoulement fluide de vos canalisations.",
       },
-      emergency: {
+      emergencyPlumbing: {
         title: 'Urgence',
         description:
           "Une fuite, une inondation, ou une canalisation bouchée peuvent survenir à tout moment. C'est pourquoi nous proposons un service de plomberie d'urgence 24/7 pour répondre rapidement à vos besoins. En cas de problème urgent, notre équipe expérimentée se déplace dans les plus brefs délais pour résoudre la situation et limiter les dégâts potentiels à votre propriété.",
@@ -103,7 +103,7 @@ export const siteContent = {
         description:
           'Blockages in pipes can cause leaks and water damage. We respond quickly to unclog and clean the pipes, using advanced techniques such as high-pressure water jetting and inspection cameras to pinpoint the blockages. Whether the issue is minor or major, we have the solutions to ensure a smooth flow of water in your pipes.',
       },
-      emergency: {
+      emergencyPlumbing: {
         title: 'Emergency',
         description:
           "A leak, flood, or clogged pipe can occur at any time. That's why we offer a 24/7 emergency plumbing service to respond quickly to your needs. In case of an urgent issue, our experienced team arrives at your property as soon as possible to resolve the situation and minimize potential damage.",
