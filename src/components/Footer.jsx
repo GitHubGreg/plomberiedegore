@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -32,6 +34,19 @@ export function Footer() {
     console.warn('Language context not available:', error)
   }
 
+  const services = [
+    'plumbing',
+    'newConstruction',
+    'renovation',
+    'excavation',
+    'drainCleaning',
+    'emergency',
+    'pumps',
+    'wells',
+  ]
+
+  const isEnglish = t('login') === 'Français'
+
   return (
     <footer className="border-t border-gray-200">
       <Container>
@@ -44,8 +59,17 @@ export function Footer() {
                 <p className="mt-1 text-sm">Plomberie de Gore</p>
               </div>
             </div>
-            <nav className="mt-11 flex gap-8">
-              <NavLinks />
+            <nav className="mt-11 flex flex-col gap-4">
+              {services.map((service) => (
+                <Link
+                  key={service}
+                  href={`/#${service}`}
+                  className="text-sm text-gray-700 hover:text-gray-900"
+                >
+                  {t(`services.${service}.title`)}{' '}
+                  {isEnglish ? 'in Gore' : 'à Gore'}
+                </Link>
+              ))}
             </nav>
           </div>
           <div className="group relative -mx-4 flex items-center self-stretch p-4 transition-colors hover:bg-gray-100 sm:self-auto sm:rounded-2xl lg:mx-0 lg:self-auto lg:p-6">
@@ -57,11 +81,13 @@ export function Footer() {
               <p className="text-base font-semibold text-gray-900">
                 <Link href="#">
                   <span className="absolute inset-0 sm:rounded-2xl" />
-                  Download the app
+                  {isEnglish ? 'Download the app' : "Télécharger l'application"}
                 </Link>
               </p>
               <p className="mt-1 text-sm text-gray-700">
-                Scan the QR code to download the app from the App Store.
+                {isEnglish
+                  ? 'Scan the QR code to download the app from the App Store.'
+                  : "Scannez le code QR pour télécharger l'application depuis l'App Store."}
               </p>
             </div>
           </div>
@@ -70,15 +96,21 @@ export function Footer() {
           <form className="flex w-full justify-center md:w-auto">
             <TextField
               type="email"
-              aria-label="Email address"
-              placeholder="Email address"
+              aria-label={isEnglish ? 'Email address' : 'Adresse courriel'}
+              placeholder={isEnglish ? 'Email address' : 'Adresse courriel'}
               autoComplete="email"
               required
               className="w-60 min-w-0 shrink"
             />
             <Button type="submit" color="cyan" className="ml-4 flex-none">
-              <span className="hidden lg:inline">Join our newsletter</span>
-              <span className="lg:hidden">Join newsletter</span>
+              <span className="hidden lg:inline">
+                {isEnglish
+                  ? 'Join our newsletter'
+                  : 'Rejoignez notre infolettre'}
+              </span>
+              <span className="lg:hidden">
+                {isEnglish ? 'Join newsletter' : 'Rejoindre'}
+              </span>
             </Button>
           </form>
           <p className="mt-6 text-sm text-gray-500 md:mt-0">
