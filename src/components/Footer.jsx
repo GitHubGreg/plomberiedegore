@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 import { SERVICES, CITIES } from '@/lib/constants'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -21,39 +22,40 @@ export function Footer() {
     console.warn('Language context not available:', error)
   }
 
+  const params = useParams()
   const isEnglish = t('login') === 'Français'
+  const citySlug = params?.city || 'gore'
+  const currentCity = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
+  const otherCities = CITIES.filter((city) => city.slug !== citySlug)
+
+  // Use specific address for Gore, general city name for other cities
+  const mapLocation =
+    citySlug === 'gore'
+      ? '6+Rue+Claudine,Gore,QC+J0V+1K0'
+      : `${currentCity},QC,Canada`
 
   return (
     <footer className="border-t border-gray-200">
       <Container>
         <div className="flex min-h-[400px] flex-col gap-y-12 pb-6 pt-16 lg:flex-row lg:py-16">
-          {/* Left side - Services */}
+          {/* Left side - Services for current city */}
           <div className="flex-none lg:w-64">
             <div className="mb-6 flex items-center text-gray-900">
               <div className="mr-4 text-left">
-                <p className="text-base font-semibold">{t('title')}</p>
+                <p className="text-base font-semibold">{currentCity}</p>
               </div>
             </div>
 
             <nav className="flex flex-col gap-4">
-              {CITIES.map((city) => (
-                <div key={city.id} className="mb-6">
-                  <h3 className="text-sm font-semibold text-gray-900">
-                    {city.id}
-                  </h3>
-                  <nav className="mt-3 flex flex-col gap-2">
-                    {SERVICES.map((service) => (
-                      <Link
-                        key={service.id}
-                        href={`/${city.slug}/${service.slug}`}
-                        className="text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        {t(`services.${service.id}.title`)}{' '}
-                        {isEnglish ? `in ${city.id}` : `à ${city.id}`}
-                      </Link>
-                    ))}
-                  </nav>
-                </div>
+              {SERVICES.map((service) => (
+                <Link
+                  key={service.id}
+                  href={`/${citySlug}/${service.slug}`}
+                  className="text-sm text-gray-700 hover:text-gray-900"
+                >
+                  {t(`services.${service.id}.title`)}{' '}
+                  {isEnglish ? `in ${currentCity}` : `à ${currentCity}`}
+                </Link>
               ))}
             </nav>
           </div>
@@ -66,11 +68,28 @@ export function Footer() {
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=6+Rue+Claudine,Gore,QC+J0V+1K0`}
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${mapLocation}`}
             ></iframe>
           </div>
         </div>
-        <div className="flex justify-center border-t border-gray-200 pb-12 pt-8">
+
+        {/* City Navigation */}
+        <div className="border-t border-gray-200 py-8">
+          <div className="flex flex-wrap justify-center gap-4">
+            {otherCities.map((city) => (
+              <Link
+                key={city.id}
+                href={`/${city.slug}`}
+                className="text-sm text-gray-600 hover:text-gray-900"
+              >
+                {city.id}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-200 py-8">
           <p className="text-center text-sm text-gray-500">
             ©{new Date().getFullYear()} {t('title')}.{' '}
             {t('all_rights_reserved')}
