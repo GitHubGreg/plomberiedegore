@@ -6,6 +6,9 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { Container } from '@/components/Container'
 import { SERVICES } from '@/lib/constants'
 import { OtherServices } from '@/components/OtherServices'
+import Link from 'next/link'
+import { CITIES } from '@/lib/constants'
+import { useParams } from 'next/navigation'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -76,8 +79,15 @@ function BackgroundIllustration(props) {
   )
 }
 
-function ServiceSection({ service, image, isEven }) {
+function ServiceSection({ service, image, isEven, citySlug }) {
   const { t } = useLanguage()
+  const isEnglish = t('login') === 'Français'
+  const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
+  const params = useParams()
+
+  // Check if we're currently on this service's page
+  const isCurrentService =
+    params?.slug === SERVICES.find((s) => s.id === service)?.slug
 
   return (
     <section
@@ -88,11 +98,22 @@ function ServiceSection({ service, image, isEven }) {
         <div className={`lg:grid lg:grid-cols-2 lg:gap-16`}>
           <div className={`relative z-10 ${isEven ? 'lg:order-2' : ''}`}>
             <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-              {t(`services.${service}.title`)}
+              {t(`services.${service}.title`)}{' '}
+              {isEnglish ? `in ${city}` : `à ${city}`}
             </h2>
             <p className="mt-4 text-lg text-gray-600">
               {t(`services.${service}.description`)}
             </p>
+            {!isCurrentService && (
+              <div className="mt-8">
+                <Link
+                  href={`/${citySlug}/${SERVICES.find((s) => s.id === service).slug}`}
+                  className="inline-flex items-center rounded-lg bg-gray-900 px-6 py-3 text-sm font-semibold text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                >
+                  {isEnglish ? 'Learn more' : 'En savoir plus'}
+                </Link>
+              </div>
+            )}
           </div>
 
           <div
@@ -118,7 +139,7 @@ function ServiceSection({ service, image, isEven }) {
   )
 }
 
-export function Services({ serviceId = null }) {
+export function Services({ serviceId = null, citySlug = 'gore' }) {
   return (
     <div className="relative min-h-screen">
       <div className="relative z-10 space-y-4">
@@ -130,6 +151,7 @@ export function Services({ serviceId = null }) {
             service={service.id}
             image={`/images/services/${service.slug}.jpg`}
             isEven={index % 2 === 1}
+            citySlug={citySlug}
           />
         ))}
       </div>

@@ -79,25 +79,10 @@ function BackgroundIllustration(props) {
   )
 }
 
-function ServiceButton({ serviceId, title, slug, isEnglish }) {
-  return (
-    <div className="flex flex-col gap-2">
-      {CITIES.map((city) => (
-        <Link
-          key={city.id}
-          href={`/${city.slug}/${slug}`}
-          className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        >
-          {title} {isEnglish ? `in ${city.id}` : `à ${city.id}`}
-        </Link>
-      ))}
-    </div>
-  )
-}
-
-export function Hero() {
+export function Hero({ citySlug = 'gore' }) {
   const { t } = useLanguage()
   const isEnglish = t('login') === 'Français'
+  const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
 
   const services = SERVICES.map((service) => ({
     id: service.id,
@@ -110,7 +95,7 @@ export function Hero() {
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
             <h1 className="text-4xl font-medium tracking-tight text-gray-900">
-              Plomberie de Gore
+              {isEnglish ? `Plumber in ${city}` : `Plombier à ${city}`}
             </h1>
             <p className="mt-6 text-lg text-gray-600">{t('description')}</p>
             <div className="mt-8">
@@ -141,13 +126,13 @@ export function Hero() {
             </p>
             <div className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-4 gap-y-4 lg:mx-0 lg:justify-start">
               {services.map((service) => (
-                <ServiceButton
+                <Link
                   key={service.id}
-                  serviceId={service.id}
-                  title={service.title}
-                  slug={SERVICES.find((s) => s.id === service.id).slug}
-                  isEnglish={isEnglish}
-                />
+                  href={`/${citySlug}/${SERVICES.find((s) => s.id === service.id).slug}`}
+                  className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                >
+                  {service.title} {isEnglish ? `in ${city}` : `à ${city}`}
+                </Link>
               ))}
             </div>
           </div>

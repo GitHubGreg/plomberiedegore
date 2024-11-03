@@ -45,7 +45,7 @@ export default function ServicePage({ params }) {
     <main>
       <div className="relative">
         <PageTitle />
-        <Services serviceId={service.id} cityId={city.id} />
+        <Services serviceId={service.id} citySlug={params.city} />
         <OtherServices />
         <CallToAction />
       </div>
