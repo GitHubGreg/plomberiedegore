@@ -46,9 +46,9 @@ function BackgroundIllustration(props) {
 }
 
 export function CallToAction() {
-  const { t } = useLanguage()
+  const { t, currentLanguage } = useLanguage()
   const params = useParams()
-  const isEnglish = t('login') === 'Français'
+  const isEnglish = currentLanguage === 'en'
 
   const citySlug = params?.city || 'gore'
   const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'

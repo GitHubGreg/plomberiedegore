@@ -9,7 +9,7 @@ export const siteContent = {
     faqs: 'FAQ',
     login: 'English',
     description:
-      "Que ce soit pour une installation neuve, des réparations urgentes ou de l'entretien régulier, Plomberie de Gore offre des services fiables et professionnels pour les clients résidentiels, commerciaux et industriels. Du dé bouchage des canalisations aux installations complexes, notre équipe qualifiée est à votre service 24/7 pour assurer le bon fonctionnement de votre plomberie. Faites confiance à notre expertise pour des solutions durables et efficaces. Appelez-nous dès maintenant pour un service rapide et personnalisé !",
+      "Que ce soit pour une installation neuve, des réparations urgentes ou de l'entretien régulier, nous offrons des services fiables et professionnels pour les clients résidentiels, commerciaux et industriels. Du dé bouchage des canalisations aux installations complexes, notre équipe qualifiée est à votre service 24/7 pour assurer le bon fonctionnement de votre plomberie. Faites confiance à notre expertise pour des solutions durables et efficaces. Appelez-nous dès maintenant pour un service rapide et personnalisé !",
     services: {
       plumbing: {
         title: 'Plomberie',
@@ -47,13 +47,13 @@ export const siteContent = {
           "Nous fournissons des services d'installation, de réparation et d'entretien pour différents types de pompes, qu'il s'agisse de pompes de puits, de pompes d'évacuation d'eau, ou de pompes pour systèmes industriels. Nos techniciens assurent un service fiable pour garantir que votre pompe fonctionne de manière optimale, prévenant ainsi les inondations et assurant une pression d'eau constante.",
       },
       wells: {
-        title: 'Puits',
+        title: 'Puit',
         description:
           "L'installation et l'entretien d'un puits nécessitent une expertise spécialisée pour garantir une eau propre et un approvisionnement stable. Nous prenons en charge chaque étape, de la planification et de l'excavation à l'installation de la pompe et du système de filtration. Nous offrons également des services d'analyse de la qualité de l'eau et des conseils pour une maintenance continue.",
       },
       sectors: {
         title:
-          'Plomberie résidentielle, commerciale, industrielle et institutionnelle',
+          'Services de plomberie résidentielle, commerciale, industrielle et institutionnelle',
         description:
           "Quel que soit le type de bâtiment – résidentiel, commercial, industriel ou institutionnel – nous avons l'expertise nécessaire pour fournir des solutions de plomberie adaptées à chaque besoin. Nos services incluent l'installation de systèmes complets, les réparations, ainsi que la maintenance préventive pour assurer une performance optimale des installations. De la maison individuelle aux infrastructures complexes, nous nous engageons à offrir une qualité de service irréprochable pour chaque projet.",
       },
@@ -65,6 +65,7 @@ export const siteContent = {
     },
     copyright: "Droits d'auteur",
     all_rights_reserved: 'Tous droits réservés.',
+    otherCities: 'Autres villes',
   },
   en: {
     title: 'Gore Plumbing',
@@ -76,7 +77,7 @@ export const siteContent = {
     faqs: 'FAQs',
     login: 'Français',
     description:
-      "Whether it's a new installation, urgent repairs, or routine maintenance, Plomberie de Gore offers reliable, professional plumbing services for residential, commercial, and industrial clients. From unclogging drains to complex system installations, our skilled team is here 24/7 to ensure your plumbing runs smoothly. Trust us for quality, efficiency, and lasting results. Call now to experience fast, expert service tailored to your needs!",
+      "Whether it's a new installation, urgent repairs, or routine maintenance, we offer reliable, professional plumbing services for residential, commercial, and industrial clients. From unclogging drains to complex system installations, our skilled team is here 24/7 to ensure your plumbing runs smoothly. Trust us for quality, efficiency, and lasting results. Call now to experience fast, expert service tailored to your needs!",
     services: {
       plumbing: {
         title: 'Plumbing',
@@ -109,18 +110,18 @@ export const siteContent = {
           "A leak, flood, or clogged pipe can occur at any time. That's why we offer a 24/7 emergency plumbing service to respond quickly to your needs. In case of an urgent issue, our experienced team arrives at your property as soon as possible to resolve the situation and minimize potential damage.",
       },
       pumps: {
-        title: 'Pump Installation, Repair, and Maintenance',
+        title: 'Pump',
         description:
           'We provide services for different types of pumps, whether for well pumps, water evacuation pumps, or industrial systems. Our technicians ensure a reliable service to guarantee that your pump operates optimally, preventing flooding and ensuring a constant water pressure.',
       },
       wells: {
-        title: 'Well Installation and Maintenance',
+        title: 'Well',
         description:
           'The installation and maintenance of a well require specialized expertise to ensure clean water and a stable supply. We take care of each step, from planning and excavation to the installation of the pump and the filtration system. We also offer services for water quality analysis and advice for ongoing maintenance.',
       },
       sectors: {
         title:
-          'Residential, Commercial, Industrial, and Institutional Plumbing',
+          'Residential, Commercial, Industrial, and Institutional Plumbing Services',
         description:
           'Whatever the type of building – residential, commercial, industrial, or institutional – we have the expertise necessary to provide plumbing solutions tailored to each need. Our services include the installation of complete systems, repairs, as well as preventive maintenance to ensure optimal performance of the installations. From individual homes to complex infrastructures, we commit to providing an unbeatable quality of service for each project.',
       },
@@ -132,5 +133,6 @@ export const siteContent = {
     },
     copyright: '© Copyright',
     all_rights_reserved: 'All rights reserved.',
+    otherCities: 'Other cities',
   },
 }

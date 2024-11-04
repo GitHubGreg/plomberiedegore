@@ -12,18 +12,14 @@ import { NavLinks } from '@/components/NavLinks'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export function Footer() {
-  let t = (text) => text // Default fallback if context fails
-  try {
-    const context = useLanguage()
-    if (context && context.t) {
-      t = context.t
-    }
-  } catch (error) {
-    console.warn('Language context not available:', error)
+  const { t: translationFn, currentLanguage } = useLanguage() || {
+    t: (text) => text,
+    currentLanguage: 'en',
   }
+  const t = translationFn
+  const isEnglish = currentLanguage === 'en'
 
   const params = useParams()
-  const isEnglish = t('login') === 'Français'
   const citySlug = params?.city || 'gore'
   const currentCity = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
   const otherCities = CITIES.filter((city) => city.slug !== citySlug)
@@ -42,7 +38,9 @@ export function Footer() {
           <div className="flex-none lg:w-64">
             <div className="mb-6 flex items-center text-gray-900">
               <div className="mr-4 text-left">
-                <p className="text-base font-semibold">{currentCity}</p>
+                <Link href={`/${citySlug}`} className="text-base font-semibold">
+                  {currentCity}
+                </Link>
               </div>
             </div>
 
@@ -51,10 +49,9 @@ export function Footer() {
                 <Link
                   key={service.id}
                   href={`/${citySlug}/${service.slug}`}
-                  className="text-sm text-gray-700 hover:text-gray-900"
+                  className="inline-block w-fit text-sm text-gray-500 hover:text-gray-900"
                 >
                   {t(`services.${service.id}.title`)}{' '}
-                  {isEnglish ? `in ${currentCity}` : `à ${currentCity}`}
                 </Link>
               ))}
             </nav>
@@ -75,12 +72,18 @@ export function Footer() {
 
         {/* City Navigation */}
         <div className="border-t border-gray-200 py-8">
+          <div className="mb-6 block text-center">
+            <Link href={`/${citySlug}`} className="text-base font-semibold">
+              {t('otherCities')}
+            </Link>
+          </div>
+
           <div className="flex flex-wrap justify-center gap-4">
             {otherCities.map((city) => (
               <Link
                 key={city.id}
                 href={`/${city.slug}`}
-                className="text-sm text-gray-600 hover:text-gray-900"
+                className="text-sm text-gray-500 hover:text-gray-900"
               >
                 {city.id}
               </Link>

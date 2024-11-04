@@ -141,7 +141,7 @@ function ServiceSection({ service, image, isEven, citySlug }) {
 
 export function Services({ serviceId = null, citySlug = 'gore' }) {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative">
       <div className="relative z-10 space-y-4">
         {SERVICES.filter(
           (service) => !serviceId || service.id === serviceId,

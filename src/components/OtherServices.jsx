@@ -7,9 +7,9 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { SERVICES, CITIES } from '@/lib/constants'
 
 export function OtherServices() {
-  const { t } = useLanguage()
+  const { t, currentLanguage } = useLanguage()
   const params = useParams()
-  const isEnglish = t('login') === 'Français'
+  const isEnglish = currentLanguage === 'en'
 
   const citySlug = params?.city || 'gore'
   const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
@@ -24,7 +24,7 @@ export function OtherServices() {
   }))
 
   return (
-    <Container>
+    <Container className="mb-24">
       <h2 className="text-2xl font-medium tracking-tight text-gray-900">
         {isEnglish
           ? `Other plumbing services in ${city}`
@@ -37,7 +37,7 @@ export function OtherServices() {
             href={`/${citySlug}/${service.slug}`}
             className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
           >
-            {service.title} {isEnglish ? `in ${city}` : `à ${city}`}
+            {service.title}
           </Link>
         ))}
       </div>

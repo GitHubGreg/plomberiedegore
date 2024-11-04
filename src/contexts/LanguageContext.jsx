@@ -6,15 +6,15 @@ import { siteContent } from '@/content/siteContent'
 const LanguageContext = createContext()
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState('fr')
+  const [currentLanguage, setCurrentLanguage] = useState('fr')
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === 'fr' ? 'en' : 'fr'))
+    setCurrentLanguage((prev) => (prev === 'fr' ? 'en' : 'fr'))
   }
 
   const t = (key) => {
     const keys = key.split('.')
-    let value = siteContent[language]
+    let value = siteContent[currentLanguage]
     for (const k of keys) {
       value = value[k]
     }
@@ -22,7 +22,7 @@ export function LanguageProvider({ children }) {
   }
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ currentLanguage, toggleLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   )

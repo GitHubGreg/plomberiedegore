@@ -80,8 +80,8 @@ function BackgroundIllustration(props) {
 }
 
 export function Hero({ citySlug = 'gore' }) {
-  const { t } = useLanguage()
-  const isEnglish = t('login') === 'Français'
+  const { t, currentLanguage } = useLanguage()
+  const isEnglish = currentLanguage === 'en'
   const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
 
   const services = SERVICES.map((service) => ({
@@ -95,7 +95,7 @@ export function Hero({ citySlug = 'gore' }) {
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
             <h1 className="text-4xl font-medium tracking-tight text-gray-900">
-              {isEnglish ? `Plumber in ${city}` : `Plombier à ${city}`}
+              {isEnglish ? `${city} Plumbing` : `Plomberie de ${city}`}
             </h1>
             <p className="mt-6 text-lg text-gray-600">{t('description')}</p>
             <div className="mt-8">
@@ -121,9 +121,9 @@ export function Hero({ citySlug = 'gore' }) {
             </div>
           </div>
           <div className="relative -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
-            <p className="text-center text-sm font-semibold text-gray-900 lg:text-left">
+            <h2 className="text-2xl font-medium tracking-tight text-gray-900">
               {t('services.sectors.title')}
-            </p>
+            </h2>
             <div className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-4 gap-y-4 lg:mx-0 lg:justify-start">
               {services.map((service) => (
                 <Link
@@ -131,7 +131,7 @@ export function Hero({ citySlug = 'gore' }) {
                   href={`/${citySlug}/${SERVICES.find((s) => s.id === service.id).slug}`}
                   className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
                 >
-                  {service.title} {isEnglish ? `in ${city}` : `à ${city}`}
+                  {service.title}
                 </Link>
               ))}
             </div>
