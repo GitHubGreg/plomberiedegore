@@ -8,6 +8,7 @@ import {
   PopoverPanel,
 } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useRouter, usePathname } from 'next/navigation'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -53,7 +54,28 @@ function MobileNavLink(props) {
 }
 
 export function Header() {
-  const { t, toggleLanguage } = useLanguage()
+  const { t, toggleLanguage, language } = useLanguage()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const handleLanguageToggle = () => {
+    const newLanguage = language === 'fr' ? 'en' : 'fr'
+
+    if (newLanguage === 'en') {
+      // Add /en to the current path
+      router.push(`/en${pathname}`)
+    } else {
+      // Remove /en from the current path
+      if (pathname === '/en' || pathname === '/en/') {
+        router.push('/')
+      } else {
+        const newPath = pathname.replace(/^\/en\//, '/')
+        router.push(newPath)
+      }
+    }
+
+    toggleLanguage()
+  }
 
   return (
     <header>
@@ -111,7 +133,7 @@ export function Header() {
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
                             <Button
-                              onClick={toggleLanguage}
+                              onClick={handleLanguageToggle}
                               variant="outline"
                               className="text-sm lg:text-xs xl:text-sm"
                             >
@@ -132,7 +154,7 @@ export function Header() {
               )}
             </Popover>
             <Button
-              onClick={toggleLanguage}
+              onClick={handleLanguageToggle}
               variant="outline"
               className="hidden text-sm lg:block lg:text-xs xl:text-sm"
             >
