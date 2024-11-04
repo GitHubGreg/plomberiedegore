@@ -1,10 +1,8 @@
-import { Inter } from 'next/font/google'
 import { LanguageProvider } from '@/contexts/LanguageContext'
+import { FontProvider } from '@/components/FontProvider'
 import { siteContent } from '@/content/siteContent'
 
 import '@/styles/tailwind.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Plomberie de Gore',
@@ -13,9 +11,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={inter.className}>
+    <html lang="fr">
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        <FontProvider>
+          <LanguageProvider>{children}</LanguageProvider>
+        </FontProvider>
       </body>
     </html>
   )

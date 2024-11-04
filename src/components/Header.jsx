@@ -55,26 +55,23 @@ function MobileNavLink(props) {
 
 export function Header() {
   const { t, toggleLanguage, language } = useLanguage()
-  const router = useRouter()
   const pathname = usePathname()
 
   const handleLanguageToggle = () => {
-    const newLanguage = language === 'fr' ? 'en' : 'fr'
-
-    if (newLanguage === 'en') {
-      // Add /en to the current path
-      router.push(`/en${pathname}`)
-    } else {
-      // Remove /en from the current path
-      if (pathname === '/en' || pathname === '/en/') {
-        router.push('/')
-      } else {
-        const newPath = pathname.replace(/^\/en\//, '/')
-        router.push(newPath)
-      }
-    }
-
     toggleLanguage()
+  }
+
+  const getLanguageToggleHref = () => {
+    if (language === 'fr') {
+      // Going to English
+      return `/en${pathname}`
+    } else {
+      // Going to French
+      if (pathname === '/en' || pathname === '/en/') {
+        return '/'
+      }
+      return pathname.replace(/^\/en\//, '/')
+    }
   }
 
   return (
@@ -132,13 +129,13 @@ export function Header() {
                             <NavLinks />
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            <Button
+                            <Link
+                              href={getLanguageToggleHref()}
                               onClick={handleLanguageToggle}
-                              variant="outline"
-                              className="text-sm lg:text-xs xl:text-sm"
+                              className="inline-flex justify-center rounded-lg border border-gray-300 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing.2)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80"
                             >
                               {t('otherLanguage')}
-                            </Button>
+                            </Link>
                             <Button
                               href={`tel:${PHONE.link}`}
                               className="text-sm lg:text-xs xl:text-sm"
@@ -153,13 +150,13 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <Button
+            <Link
+              href={getLanguageToggleHref()}
               onClick={handleLanguageToggle}
-              variant="outline"
-              className="hidden text-sm lg:block lg:text-xs xl:text-sm"
+              className="hidden justify-center rounded-lg border border-gray-300 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing.2)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80 lg:inline-flex lg:text-xs xl:text-sm"
             >
               {t('otherLanguage')}
-            </Button>
+            </Link>
             <Button
               href={`tel:${PHONE.link}`}
               className="hidden text-sm lg:block lg:text-xs xl:text-sm"
