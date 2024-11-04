@@ -9,6 +9,7 @@ import { Container } from '@/components/Container'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { SERVICES, CITIES, PHONE } from '@/lib/constants'
 import logo from '@/images/logo.svg'
+import { getLocalizedPath } from '@/lib/utils'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -80,8 +81,8 @@ function BackgroundIllustration(props) {
 }
 
 export function Hero({ citySlug = 'gore' }) {
-  const { t, currentLanguage } = useLanguage()
-  const isEnglish = currentLanguage === 'en'
+  const { t, language } = useLanguage()
+  const isEnglish = language === 'en'
   const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
 
   const services = SERVICES.map((service) => ({
@@ -128,7 +129,10 @@ export function Hero({ citySlug = 'gore' }) {
               {services.map((service) => (
                 <Link
                   key={service.id}
-                  href={`/${citySlug}/${SERVICES.find((s) => s.id === service.id).slug}`}
+                  href={getLocalizedPath(
+                    `${citySlug}/${SERVICES.find((s) => s.id === service.id).slug}`,
+                    language,
+                  )}
                   className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
                 >
                   {service.title}

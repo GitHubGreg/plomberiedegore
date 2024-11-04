@@ -10,14 +10,11 @@ import { TextField } from '@/components/Fields'
 import { Logomark } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { getLocalizedPath } from '@/lib/utils'
 
 export function Footer() {
-  const { t: translationFn, currentLanguage } = useLanguage() || {
-    t: (text) => text,
-    currentLanguage: 'en',
-  }
-  const t = translationFn
-  const isEnglish = currentLanguage === 'en'
+  const { t, language } = useLanguage()
+  const isEnglish = language === 'en'
 
   const params = useParams()
   const citySlug = params?.city || 'gore'
@@ -48,10 +45,13 @@ export function Footer() {
               {SERVICES.map((service) => (
                 <Link
                   key={service.id}
-                  href={`/${citySlug}/${service.slug}`}
+                  href={getLocalizedPath(
+                    `${citySlug}/${service.slug}`,
+                    language,
+                  )}
                   className="inline-block w-fit text-sm text-gray-500 hover:text-gray-900"
                 >
-                  {t(`services.${service.id}.title`)}{' '}
+                  {t(`services.${service.id}.title`)}
                 </Link>
               ))}
             </nav>
@@ -82,7 +82,7 @@ export function Footer() {
             {otherCities.map((city) => (
               <Link
                 key={city.id}
-                href={`/${city.slug}`}
+                href={getLocalizedPath(city.slug, language)}
                 className="text-sm text-gray-500 hover:text-gray-900"
               >
                 {city.id}
