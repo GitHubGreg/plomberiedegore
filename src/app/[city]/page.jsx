@@ -3,6 +3,8 @@ import { Hero } from '@/components/Hero'
 import { Services } from '@/components/Services'
 import { CallToAction } from '@/components/CallToAction'
 import { notFound } from 'next/navigation'
+import { Reviews } from '@/components/Reviews'
+import { OtherServices } from '@/components/OtherServices'
 
 // Generate static params for all cities
 export function generateStaticParams() {
@@ -32,8 +34,10 @@ export default function CityPage({ params }) {
   return (
     <main>
       <Hero citySlug={params.city} />
-      <Services citySlug={params.city} />
+      <Services citySlug={params.city} />\
+      <OtherServices />
       <CallToAction />
+      <Reviews />
     </main>
   )
 }

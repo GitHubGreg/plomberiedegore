@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { SERVICES, CITIES } from '@/lib/constants'
+import { SERVICES, CITIES, PHONE } from '@/lib/constants'
 import logo from '@/images/logo.svg'
 
 function BackgroundIllustration(props) {
@@ -100,10 +100,10 @@ export function Hero({ citySlug = 'gore' }) {
             <p className="mt-6 text-lg text-gray-600">{t('description')}</p>
             <div className="mt-8">
               <a
-                href="tel:+14508219663"
-                className="inline-flex items-center rounded-full bg-gray-900 px-8 py-4 text-lg font-semibold text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                href={`tel:${PHONE.link}`}
+                className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 text-lg font-semibold text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
               >
-                (450) 821-9663
+                {PHONE.display}
               </a>
             </div>
           </div>

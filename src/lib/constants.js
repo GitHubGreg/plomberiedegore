@@ -22,3 +22,8 @@ export const CITIES = [
   { id: 'Saint-Jérôme', slug: 'saint-jerome' },
   { id: 'Morin-Heights', slug: 'morin-heights' },
 ]
+
+export const PHONE = {
+  display: '(450) 821-9663',
+  link: '+14508219663',
+}

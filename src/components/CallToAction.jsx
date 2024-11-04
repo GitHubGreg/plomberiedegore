@@ -4,7 +4,7 @@ import { useId } from 'react'
 import { useParams } from 'next/navigation'
 import { Container } from '@/components/Container'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { CITIES } from '@/lib/constants'
+import { CITIES, PHONE } from '@/lib/constants'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -72,10 +72,10 @@ export function CallToAction() {
           </p>
           <div className="mt-8">
             <a
-              href="tel:+14508219663"
-              className="inline-flex items-center rounded-full bg-white px-8 py-4 text-lg font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400/80"
+              href={`tel:${PHONE.link}`}
+              className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-lg font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400/80"
             >
-              (450) 821-9663
+              {PHONE.display}
             </a>
           </div>
         </div>

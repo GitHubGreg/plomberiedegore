@@ -99,7 +99,6 @@ function ServiceSection({ service, image, isEven, citySlug }) {
           <div className={`relative z-10 ${isEven ? 'lg:order-2' : ''}`}>
             <h2 className="text-3xl font-medium tracking-tight text-gray-900">
               {t(`services.${service}.title`)}{' '}
-              {isEnglish ? `in ${city}` : `à ${city}`}
             </h2>
             <p className="mt-4 text-lg text-gray-600">
               {t(`services.${service}.description`)}

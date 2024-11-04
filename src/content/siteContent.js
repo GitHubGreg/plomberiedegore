@@ -7,9 +7,9 @@ export const siteContent = {
       'Découvrez ce que nos clients satisfaits disent de nos services.',
     pricing: 'Tarifs',
     faqs: 'FAQ',
-    login: 'English',
+    otherLanguage: 'English',
     description:
-      "Que ce soit pour une installation neuve, des réparations urgentes ou de l'entretien régulier, nous offrons des services fiables et professionnels pour les clients résidentiels, commerciaux et industriels. Du dé bouchage des canalisations aux installations complexes, notre équipe qualifiée est à votre service 24/7 pour assurer le bon fonctionnement de votre plomberie. Faites confiance à notre expertise pour des solutions durables et efficaces. Appelez-nous dès maintenant pour un service rapide et personnalisé !",
+      "Que ce soit pour une installation neuve, des réparations urgentes ou de l'entretien régulier, nous offrons des services fiables et professionnels pour les clients résidentiels, commerciaux et industriels. Du dé bouchage des canalisations aux installations complexes, notre équipe qualifiée est à votre service 24/7 pour assurer le bon fonctionnement de votre plomberie. Faites confiance à notre expertise pour des solutions durables et efficaces. Appelez-nous dès maintenant pour un service rapide et personnalisé!",
     services: {
       plumbing: {
         title: 'Plomberie',
@@ -61,11 +61,11 @@ export const siteContent = {
     callToAction: {
       title: "Besoin d'un plombier?",
       description:
-        'Disponible 24/7 pour tous vos besoins en plomberie. Appelez-nous maintenant pour un service rapide et professionnel !',
+        'Disponible 24/7 pour tous vos besoins en plomberie. Appelez-nous maintenant pour un service rapide et professionnel!',
     },
     copyright: "Droits d'auteur",
     all_rights_reserved: 'Tous droits réservés.',
-    otherCities: 'Autres villes',
+    otherCitiesWeServe: 'Autres villes',
   },
   en: {
     title: 'Gore Plumbing',
@@ -75,7 +75,7 @@ export const siteContent = {
       'See what our satisfied customers have to say about our services.',
     pricing: 'Pricing',
     faqs: 'FAQs',
-    login: 'Français',
+    otherLanguage: 'Français',
     description:
       "Whether it's a new installation, urgent repairs, or routine maintenance, we offer reliable, professional plumbing services for residential, commercial, and industrial clients. From unclogging drains to complex system installations, our skilled team is here 24/7 to ensure your plumbing runs smoothly. Trust us for quality, efficiency, and lasting results. Call now to experience fast, expert service tailored to your needs!",
     services: {
@@ -133,6 +133,6 @@ export const siteContent = {
     },
     copyright: '© Copyright',
     all_rights_reserved: 'All rights reserved.',
-    otherCities: 'Other cities',
+    otherCitiesWeServe: 'Other cities we serve',
   },
 }

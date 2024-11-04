@@ -14,6 +14,7 @@ import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { PHONE } from '@/lib/constants'
 
 function MenuIcon(props) {
   return (
@@ -62,11 +63,11 @@ export function Header() {
             <Link href="/" aria-label="Home">
               <Logo className="h-10 w-auto" />
             </Link>
-            <div className="hidden lg:flex lg:gap-10">
+            <div className="hidden lg:flex lg:gap-2 xl:gap-5">
               <NavLinks />
             </div>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center lg:gap-2 xl:gap-5">
             <Popover className="lg:hidden">
               {({ open }) => (
                 <>
@@ -105,23 +106,23 @@ export function Header() {
                           }}
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
-                          <div className="space-y-4">
-                            <MobileNavLink href="/#features">
-                              Features
-                            </MobileNavLink>
-                            <MobileNavLink href="/#reviews">
-                              Reviews
-                            </MobileNavLink>
-                            <MobileNavLink href="/#pricing">
-                              Pricing
-                            </MobileNavLink>
-                            <MobileNavLink href="/#faqs">FAQs</MobileNavLink>
+                          <div className="flex flex-col space-y-4">
+                            <NavLinks />
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            <Button onClick={toggleLanguage} variant="outline">
-                              {t('login')}
+                            <Button
+                              onClick={toggleLanguage}
+                              variant="outline"
+                              className="text-sm lg:text-xs xl:text-sm"
+                            >
+                              {t('otherLanguage')}
                             </Button>
-                            <Button href="#">Download the app</Button>
+                            <Button
+                              href={`tel:${PHONE.link}`}
+                              className="text-sm lg:text-xs xl:text-sm"
+                            >
+                              {PHONE.display}
+                            </Button>
                           </div>
                         </PopoverPanel>
                       </>
@@ -133,12 +134,15 @@ export function Header() {
             <Button
               onClick={toggleLanguage}
               variant="outline"
-              className="hidden lg:block"
+              className="hidden text-sm lg:block lg:text-xs xl:text-sm"
             >
-              {t('login')}
+              {t('otherLanguage')}
             </Button>
-            <Button href="#" className="hidden lg:block">
-              Download
+            <Button
+              href={`tel:${PHONE.link}`}
+              className="hidden text-sm lg:block lg:text-xs xl:text-sm"
+            >
+              {PHONE.display}
             </Button>
           </div>
         </Container>

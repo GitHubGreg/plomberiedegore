@@ -33,9 +33,9 @@ export function Footer() {
   return (
     <footer className="border-t border-gray-200">
       <Container>
-        <div className="flex min-h-[400px] flex-col gap-y-12 pb-6 pt-16 lg:flex-row lg:py-16">
+        <div className="flex min-h-[400px] flex-row gap-y-12 pb-6 pt-16">
           {/* Left side - Services for current city */}
-          <div className="flex-none lg:w-64">
+          <div className="mr-10 w-fit flex-none">
             <div className="mb-6 flex items-center text-gray-900">
               <div className="mr-4 text-left">
                 <Link href={`/${citySlug}`} className="text-base font-semibold">
@@ -58,7 +58,7 @@ export function Footer() {
           </div>
 
           {/* Right side - Map */}
-          <div className="h-[400px] lg:h-auto lg:flex-1">
+          <div className="h-[400px] flex-1 lg:h-auto">
             <iframe
               className="h-full w-full rounded-lg"
               style={{ border: 0 }}
@@ -73,9 +73,9 @@ export function Footer() {
         {/* City Navigation */}
         <div className="border-t border-gray-200 py-8">
           <div className="mb-6 block text-center">
-            <Link href={`/${citySlug}`} className="text-base font-semibold">
-              {t('otherCities')}
-            </Link>
+            <div className="text-base font-semibold">
+              {t('otherCitiesWeServe')}
+            </div>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4">

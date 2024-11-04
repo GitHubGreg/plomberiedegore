@@ -4,6 +4,7 @@ import { CallToAction } from '@/components/CallToAction'
 import { PageTitle } from '@/components/PageTitle'
 import { OtherServices } from '@/components/OtherServices'
 import { notFound } from 'next/navigation'
+import { Reviews } from '@/components/Reviews'
 
 // Generate static params for all city/service combinations
 export function generateStaticParams() {
@@ -48,6 +49,7 @@ export default function ServicePage({ params }) {
         <Services serviceId={service.id} citySlug={params.city} />
         <OtherServices />
         <CallToAction />
+        <Reviews />
       </div>
     </main>
   )
