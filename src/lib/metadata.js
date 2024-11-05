@@ -17,9 +17,19 @@ export async function generateCityMetadata(params, isEnglish) {
   const content = isEnglish ? siteContent.en : siteContent.fr
   const description = content.cityDescriptions[city.id]
 
+  // Use the first service's image for city pages
+  const defaultImage = `/images/services/${SERVICES[0].slug}.jpg`
+
   return {
     title,
     description,
+    openGraph: {
+      images: [defaultImage],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [defaultImage],
+    },
   }
 }
 
@@ -45,8 +55,18 @@ export async function generateServiceMetadata(params, isEnglish) {
   const content = isEnglish ? siteContent.en : siteContent.fr
   const description = content.services[service.id].descriptions[city.id]
 
+  // Use the specific service's image
+  const serviceImage = `/images/services/${service.slug}.jpg`
+
   return {
     title,
     description,
+    openGraph: {
+      images: [serviceImage],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [serviceImage],
+    },
   }
 }
