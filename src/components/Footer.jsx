@@ -142,8 +142,14 @@ export function Footer() {
       <Container>
         <div className="pb-2 pt-12">
           <p className="text-center text-sm text-gray-500">
-            ©{new Date().getFullYear()} {t('title')}.{' '}
-            {t('all_rights_reserved')}{' '}
+            ©{new Date().getFullYear()}{' '}
+            <Link
+              href={'/'}
+              className="underline hover:text-gray-900 hover:no-underline"
+            >
+              {t('title')}
+            </Link>
+            . {t('all_rights_reserved')}{' '}
             <Link
               href={getLanguageToggleHref()}
               onClick={handleLanguageToggle}
