@@ -21,14 +21,14 @@ export function ContactLink({ type, href, children, external }) {
     <div className="group flex flex-col items-center">
       <a
         href={href}
-        className="mb-4 inline-flex rounded-full bg-gray-600 p-3 transition-colors hover:bg-gray-900 group-hover:bg-gray-900"
+        className="inline-flex rounded-full bg-gray-600 p-3 transition-colors hover:bg-gray-900 group-hover:bg-gray-900"
         {...linkProps}
       >
         <Icon className="h-6 w-6 text-white" />
       </a>
       <a
         href={href}
-        className="text-center text-lg font-medium text-gray-600 transition-colors hover:text-gray-900 group-hover:text-gray-900"
+        className="pt-4 text-center text-lg font-medium text-gray-600 transition-colors hover:text-gray-900 group-hover:text-gray-900"
         {...linkProps}
       >
         {children}

@@ -16,6 +16,7 @@ import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { PHONE } from '@/lib/constants'
+import { getLocalizedPath } from '@/lib/utils'
 
 function MenuIcon(props) {
   return (
@@ -61,25 +62,12 @@ export function Header() {
     toggleLanguage()
   }
 
-  const getLanguageToggleHref = () => {
-    if (language === 'fr') {
-      // Going to English
-      return `/en${pathname}`
-    } else {
-      // Going to French
-      if (pathname === '/en' || pathname === '/en/') {
-        return '/'
-      }
-      return pathname.replace(/^\/en\//, '/')
-    }
-  }
-
   return (
     <header>
       <nav>
         <Container className="relative z-50 flex justify-between py-8">
           <div className="relative z-10 flex items-center gap-16">
-            <Link href="/" aria-label="Home">
+            <Link href={getLocalizedPath('/', language)} aria-label="Home">
               <Logo className="h-10 w-auto" />
             </Link>
             <div className="hidden lg:flex lg:gap-2 xl:gap-5">
@@ -130,7 +118,10 @@ export function Header() {
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
                             <Link
-                              href={getLanguageToggleHref()}
+                              href={getLocalizedPath(
+                                pathname,
+                                language === 'en' ? 'fr' : 'en',
+                              )}
                               onClick={handleLanguageToggle}
                               className="inline-flex justify-center rounded-lg border border-gray-300 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing.2)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80"
                             >
@@ -151,7 +142,7 @@ export function Header() {
               )}
             </Popover>
             <Link
-              href={getLanguageToggleHref()}
+              href={getLocalizedPath(pathname, language === 'en' ? 'fr' : 'en')}
               onClick={handleLanguageToggle}
               className="hidden justify-center rounded-lg border border-gray-300 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing.2)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80 lg:inline-flex lg:text-xs xl:text-sm"
             >

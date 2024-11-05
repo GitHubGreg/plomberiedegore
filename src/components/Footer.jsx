@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
+import { useParams, usePathname } from 'next/navigation'
 import { SERVICES, CITIES, PHONE, EMAIL, ADDRESS } from '@/lib/constants'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -14,7 +14,8 @@ import { getLocalizedPath } from '@/lib/utils'
 import { ContactLink } from '@/components/ContactLink'
 
 export function Footer() {
-  const { t, language } = useLanguage()
+  const { t, language, toggleLanguage } = useLanguage()
+  const pathname = usePathname()
   const isEnglish = language === 'en'
 
   const params = useParams()
@@ -27,6 +28,23 @@ export function Footer() {
     citySlug === 'gore'
       ? '6+Rue+Claudine,Gore,QC+J0V+1K0'
       : `${currentCity},QC,Canada`
+
+  const handleLanguageToggle = () => {
+    toggleLanguage()
+  }
+
+  const getLanguageToggleHref = () => {
+    if (language === 'fr') {
+      // Going to English
+      return `/en${pathname}`
+    } else {
+      // Going to French
+      if (pathname === '/en' || pathname === '/en/') {
+        return '/'
+      }
+      return pathname.replace(/^\/en\//, '/')
+    }
+  }
 
   return (
     <footer className="border-t border-gray-200">
@@ -63,7 +81,7 @@ export function Footer() {
           {/* Center - Map */}
           <div className="h-[400px] w-full flex-1 lg:h-auto">
             <iframe
-              className="h-full w-full rounded-lg"
+              className="h-[400px] w-full rounded-lg lg:h-full"
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
@@ -125,7 +143,14 @@ export function Footer() {
         <div className="pb-2 pt-12">
           <p className="text-center text-sm text-gray-500">
             ©{new Date().getFullYear()} {t('title')}.{' '}
-            {t('all_rights_reserved')}
+            {t('all_rights_reserved')}{' '}
+            <Link
+              href={getLanguageToggleHref()}
+              onClick={handleLanguageToggle}
+              className="underline hover:text-gray-900 hover:no-underline"
+            >
+              {t('otherLanguage')}
+            </Link>
           </p>
         </div>
       </Container>
