@@ -1,12 +1,12 @@
 export const SERVICES = [
-  { id: 'plumbing', slug: 'plumbing' },
-  { id: 'newConstruction', slug: 'new-construction' },
+  { id: 'plumbing', slug: 'plomberie' },
+  { id: 'newConstruction', slug: 'construction-neuve' },
   { id: 'renovation', slug: 'renovation' },
   { id: 'excavation', slug: 'excavation' },
-  { id: 'drainCleaning', slug: 'drain-cleaning' },
-  { id: 'emergencyPlumbing', slug: 'emergency-plumbing' },
-  { id: 'pumps', slug: 'water-pump' },
-  { id: 'wells', slug: 'water-well' },
+  { id: 'drainCleaning', slug: 'nettoyage-drain' },
+  { id: 'emergencyPlumbing', slug: 'plomberie-urgence' },
+  { id: 'pumps', slug: 'pompes-eau' },
+  { id: 'wells', slug: 'puits-eau' },
 ]
 
 export const CITIES = [
