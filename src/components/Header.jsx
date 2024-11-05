@@ -84,7 +84,7 @@ export function Header() {
           </div>
           <div className="flex items-center lg:gap-2 xl:gap-5">
             <Popover className="lg:hidden">
-              {({ open }) => (
+              {({ open, close }) => (
                 <>
                   <PopoverButton
                     className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 transition-colors hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 ui-not-focus-visible:outline-none"
@@ -122,7 +122,7 @@ export function Header() {
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
                           <div className="flex flex-col space-y-4">
-                            <NavLinks />
+                            <NavLinks onClick={() => close()} />
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
                             <Button
@@ -130,7 +130,10 @@ export function Header() {
                                 pathname,
                                 language === 'en' ? 'fr' : 'en',
                               )}
-                              onClick={handleLanguageToggle}
+                              onClick={() => {
+                                handleLanguageToggle()
+                                close()
+                              }}
                               color="white"
                               variant="outline"
                               size="responsive"
@@ -141,6 +144,7 @@ export function Header() {
                               href={`tel:${PHONE.link}`}
                               color="gray"
                               size="responsive"
+                              onClick={() => close()}
                             >
                               {PHONE.display}
                             </Button>

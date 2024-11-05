@@ -6,7 +6,7 @@ import { SERVICES } from '@/lib/constants'
 import { getLocalizedPath } from '@/lib/utils'
 import { Button } from './Button'
 
-export function NavLinks() {
+export function NavLinks({ onClick }) {
   const { t, language } = useLanguage()
   const params = useParams()
 
@@ -29,6 +29,7 @@ export function NavLinks() {
           color="white"
           variant="outline"
           isActive={isCurrentService(service.slug)}
+          onClick={onClick}
         >
           {t(`services.${service.id}.title`)}
         </Button>
