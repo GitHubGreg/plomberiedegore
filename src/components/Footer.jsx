@@ -119,7 +119,7 @@ export function Footer() {
       <div className="mt-12 border-b border-t border-gray-200">
         <div className="bg-gray-100">
           <Container>
-            <div className="py-4">
+            <div className="pb-4 pt-5">
               <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <ContactLink type="phone" href={`tel:${PHONE.link}`}>
                   {PHONE.display}
