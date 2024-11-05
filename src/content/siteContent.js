@@ -42,12 +42,12 @@ export const siteContent = {
           "Une fuite, une inondation, ou une canalisation bouchée peuvent survenir à tout moment. C'est pourquoi nous proposons un service de plomberie d'urgence 24/7 pour répondre rapidement à vos besoins. En cas de problème urgent, notre équipe expérimentée se déplace dans les plus brefs délais pour résoudre la situation et limiter les dégâts potentiels à votre propriété.",
       },
       pumps: {
-        title: 'Pompe',
+        title: 'Pompes',
         description:
           "Nous fournissons des services d'installation, de réparation et d'entretien pour différents types de pompes, qu'il s'agisse de pompes de puits, de pompes d'évacuation d'eau, ou de pompes pour systèmes industriels. Nos techniciens assurent un service fiable pour garantir que votre pompe fonctionne de manière optimale, prévenant ainsi les inondations et assurant une pression d'eau constante.",
       },
       wells: {
-        title: 'Puit',
+        title: 'Puits',
         description:
           "L'installation et l'entretien d'un puits nécessitent une expertise spécialisée pour garantir une eau propre et un approvisionnement stable. Nous prenons en charge chaque étape, de la planification et de l'excavation à l'installation de la pompe et du système de filtration. Nous offrons également des services d'analyse de la qualité de l'eau et des conseils pour une maintenance continue.",
       },
@@ -110,12 +110,12 @@ export const siteContent = {
           "A leak, flood, or clogged pipe can occur at any time. That's why we offer a 24/7 emergency plumbing service to respond quickly to your needs. In case of an urgent issue, our experienced team arrives at your property as soon as possible to resolve the situation and minimize potential damage.",
       },
       pumps: {
-        title: 'Pump',
+        title: 'Pumps',
         description:
           'We provide services for different types of pumps, whether for well pumps, water evacuation pumps, or industrial systems. Our technicians ensure a reliable service to guarantee that your pump operates optimally, preventing flooding and ensuring a constant water pressure.',
       },
       wells: {
-        title: 'Well',
+        title: 'Wells',
         description:
           'The installation and maintenance of a well require specialized expertise to ensure clean water and a stable supply. We take care of each step, from planning and excavation to the installation of the pump and the filtration system. We also offer services for water quality analysis and advice for ongoing maintenance.',
       },

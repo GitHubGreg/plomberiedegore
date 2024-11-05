@@ -5,11 +5,12 @@ import { useParams } from 'next/navigation'
 import { Container } from '@/components/Container'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { SERVICES, CITIES } from '@/lib/constants'
+import { getLocalizedPath } from '@/lib/utils'
 
 export function OtherServices() {
-  const { t, currentLanguage } = useLanguage()
+  const { t, language } = useLanguage()
   const params = useParams()
-  const isEnglish = currentLanguage === 'en'
+  const isEnglish = language === 'en'
 
   const citySlug = params?.city || 'gore'
   const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
@@ -34,7 +35,7 @@ export function OtherServices() {
         {otherServices.map((service) => (
           <Link
             key={service.id}
-            href={`/${citySlug}/${service.slug}`}
+            href={getLocalizedPath(`${citySlug}/${service.slug}`, language)}
             className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
           >
             {service.title}

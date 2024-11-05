@@ -7,8 +7,13 @@ import { OtherServices } from '@/components/OtherServices'
 import { CITIES, SERVICES } from '@/lib/constants'
 import { notFound } from 'next/navigation'
 import { Layout } from '@/components/pages/Layout'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { CityTitle } from '../CityTitle'
 
 export function ServicePage({ citySlug, serviceSlug }) {
+  const { language } = useLanguage()
+  const isEnglish = language === 'en'
+
   // Check if both city and service exist
   if (
     !CITIES.some((city) => city.slug === citySlug) ||
@@ -18,11 +23,12 @@ export function ServicePage({ citySlug, serviceSlug }) {
   }
 
   const service = SERVICES.find((s) => s.slug === serviceSlug)
+  const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
 
   return (
     <Layout>
       <main>
-        <Hero citySlug={citySlug} />
+        <CityTitle citySlug={citySlug} />
         <Services serviceId={service.id} citySlug={citySlug} />
         <OtherServices />
         <CallToAction />
