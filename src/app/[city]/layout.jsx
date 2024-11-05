@@ -2,7 +2,8 @@ import { CITIES } from '@/lib/constants'
 import { notFound } from 'next/navigation'
 import { generateCityMetadata } from '@/lib/metadata'
 
-export default function CityLayout({ children, params }) {
+export default async function CityLayout({ children, params: paramsPromise }) {
+  const params = await paramsPromise
   const city = CITIES.find((c) => c.slug === params.city)
 
   if (!city) {
@@ -13,5 +14,6 @@ export default function CityLayout({ children, params }) {
 }
 
 export async function generateMetadata(props) {
-  return generateCityMetadata(props.params, false)
+  const params = await props.params
+  return await generateCityMetadata(params, false)
 }
