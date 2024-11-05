@@ -65,7 +65,7 @@ export const siteContent = {
     },
     copyright: "Droits d'auteur",
     all_rights_reserved: 'Tous droits réservés.',
-    otherCitiesWeServe: 'Autres villes',
+    otherCitiesWeServe: 'Autres villes desservies',
   },
   en: {
     title: 'Gore Plumbing',
