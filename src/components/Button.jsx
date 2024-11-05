@@ -3,9 +3,9 @@ import clsx from 'clsx'
 
 const baseStyles = {
   solid:
-    'inline-flex justify-center rounded-lg font-semibold outline-2 outline-offset-2 transition-colors items-center justify-center text-center',
+    'inline-flex justify-center rounded-lg font-semibold outline-2 outline-offset-2 transition-all items-center justify-center text-center',
   outline:
-    'inline-flex justify-center rounded-lg border outline-2 outline-offset-2 transition-colors items-center justify-center text-center',
+    'inline-flex justify-center rounded-lg border outline-2 outline-offset-2 transition-all items-center justify-center text-center',
 }
 
 const sizeStyles = {
@@ -20,7 +20,7 @@ const sizeStyles = {
 const variantStyles = {
   solid: {
     blueGradient:
-      'relative overflow-hidden bg-gradient-to-br from-[#0C5788] to-[#001847] text-white before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-white/10 active:opacity-90 active:text-white/80 before:transition-colors',
+      'relative overflow-hidden bg-gradient-to-br from-[#0C5788] to-[#001847] text-white before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-white/10 active:opacity-90 active:text-white/80 before:transition-all',
     gray: 'bg-gray-900 text-white hover:bg-gray-600 active:bg-gray-600 active:text-white/80',
   },
   outline: {

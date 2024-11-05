@@ -19,7 +19,7 @@ export function CityTitle({ citySlug = 'gore' }) {
   return (
     <div className="pt-12">
       <Container>
-        <div className="flex items-center justify-center gap-4 transition-colors">
+        <div className="flex items-center justify-center gap-4 transition-all">
           <Image
             src={logo}
             alt="Logo"
@@ -29,7 +29,7 @@ export function CityTitle({ citySlug = 'gore' }) {
             priority
           />
           <Link href={homeUrl}>
-            <h1 className="text-4xl font-medium tracking-tight text-gray-900 transition-colors hover:text-gray-600">
+            <h1 className="text-4xl font-medium tracking-tight text-gray-900 transition-all hover:text-gray-600">
               {title}
             </h1>{' '}
           </Link>

@@ -20,7 +20,7 @@ export function PageTitle() {
   return (
     <Container className="mb-16 mt-24">
       <Link href={homeUrl}>
-        <h1 className="text-center text-4xl font-medium tracking-tight text-gray-900 transition-colors hover:text-gray-600">
+        <h1 className="text-center text-4xl font-medium tracking-tight text-gray-900 transition-all hover:text-gray-600">
           {isEnglish ? `${city} Plumbing` : `Plombier de ${city}`}
         </h1>
       </Link>

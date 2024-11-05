@@ -70,7 +70,7 @@ export function Footer() {
                     `${citySlug}/${service.slug}`,
                     language,
                   )}
-                  className="inline-block w-fit text-sm text-gray-500 transition-colors hover:text-gray-900"
+                  className="inline-block w-fit text-sm text-gray-500 transition-all hover:text-gray-900"
                 >
                   {t(`services.${service.id}.title`)}
                 </Link>
@@ -103,7 +103,7 @@ export function Footer() {
                 <Link
                   key={city.id}
                   href={getLocalizedPath(city.slug, language)}
-                  className="w-fit text-sm text-gray-500 transition-colors hover:text-gray-900"
+                  className="w-fit text-sm text-gray-500 transition-all hover:text-gray-900"
                 >
                   {city.id}
                 </Link>
@@ -137,7 +137,7 @@ export function Footer() {
             ©{new Date().getFullYear()}{' '}
             <Link
               href={'/'}
-              className="underline transition-colors hover:text-gray-900 hover:no-underline"
+              className="underline transition-all hover:text-gray-900 hover:no-underline"
             >
               {t('title')}
             </Link>
