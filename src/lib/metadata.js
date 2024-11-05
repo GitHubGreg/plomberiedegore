@@ -14,8 +14,12 @@ export async function generateCityMetadata(params, isEnglish) {
     ? `${city.id} Plumbing - ${siteContent.en.services.sectors.title}`
     : `Plomberie de ${city.id} - ${siteContent.fr.services.sectors.title}`
 
+  const content = isEnglish ? siteContent.en : siteContent.fr
+  const description = content.cityDescriptions[city.id]
+
   return {
     title,
+    description,
   }
 }
 
@@ -38,7 +42,11 @@ export async function generateServiceMetadata(params, isEnglish) {
     ? `${serviceTitle} - ${city.id} Plumbing - ${siteContent.en.services.sectors.title}`
     : `${serviceTitle} - Plomberie de ${city.id} - ${siteContent.fr.services.sectors.title}`
 
+  const content = isEnglish ? siteContent.en : siteContent.fr
+  const description = content.services[service.id].descriptions[city.id]
+
   return {
     title,
+    description,
   }
 }
