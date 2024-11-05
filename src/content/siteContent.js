@@ -85,36 +85,36 @@ export const siteContent = {
         title: 'Rénovation',
         descriptions: {
           lachute:
-            "In Lachute, our plumbing renovation service adapts to the specific needs of heritage homes and modern buildings. Our local team understands Lachute's unique architecture and offers solutions that preserve your property's character while modernizing your installations.",
+            "À Lachute, notre service de rénovation en plomberie s'adapte aux besoins spécifiques des maisons patrimoniales et des bâtiments modernes. Notre équipe locale comprend l'architecture unique de Lachute et offre des solutions qui préservent le caractère de votre propriété tout en modernisant vos installations.",
 
           'wentworth-north':
-            "Renovation projects in Wentworth-North benefit from our expertise in plumbing modernization adapted to mountainous challenges. We excel in upgrading existing systems to meet the region's rigorous climate conditions.",
+            'Les projets de rénovation à Wentworth-Nord bénéficient de notre expertise en modernisation de plomberie adaptée aux défis montagneux. Nous excellons dans la mise à niveau des systèmes existants pour répondre aux conditions climatiques rigoureuses de la région.',
 
           'val-david':
-            "In Val-David, we specialize in plumbing renovations that respect the artistic character of properties. Our approach combines technical innovation with aesthetic sensitivity to modernize your installations while preserving your space's unique charm.",
+            'À Val-David, nous nous spécialisons dans les rénovations de plomberie qui respectent le caractère artistique des propriétés. Notre approche combine innovation technique et sensibilité esthétique pour moderniser vos installations tout en préservant le charme unique de votre espace.',
 
           prevost:
-            'For renovations in Prévost, we offer solutions that respect local architecture while integrating modern technologies. Our team is expert in modernizing plumbing systems in both historic houses and contemporary homes.',
+            "Pour les rénovations à Prévost, nous offrons des solutions qui respectent l'architecture locale tout en intégrant les technologies modernes. Notre équipe est experte dans la modernisation des systèmes de plomberie tant dans les maisons historiques que contemporaines.",
 
-          gore: "As local Gore plumbers, we understand the particularities of renovations in our community. We offer personalized solutions that modernize your installations while respecting your property's unique character.",
+          gore: 'En tant que plombiers locaux de Gore, nous comprenons les particularités des rénovations dans notre communauté. Nous offrons des solutions personnalisées qui modernisent vos installations tout en respectant le caractère unique de votre propriété.',
 
           'saint-sauveur':
-            'In Saint-Sauveur, our plumbing renovation services adapt to the varied needs of this dynamic tourist town. Whether for a mountain chalet or downtown business, we ensure efficient and lasting renovations.',
+            "À Saint-Sauveur, nos services de rénovation en plomberie s'adaptent aux besoins variés de cette ville touristique dynamique. Que ce soit pour un chalet de montagne ou un commerce du centre-ville, nous assurons des rénovations efficaces et durables.",
 
           'sainte-adele':
-            'Renovation projects in Sainte-Adèle benefit from our expertise in plumbing modernization adapted to mountainous terrain. We excel in upgrading existing systems for better energy efficiency.',
+            'Les projets de rénovation à Sainte-Adèle bénéficient de notre expertise en modernisation de plomberie adaptée au terrain montagneux. Nous excellons dans la mise à niveau des systèmes existants pour une meilleure efficacité énergétique.',
 
           piedmont:
-            'In Piedmont, we offer plumbing renovation services that take into account the unique challenges of rugged terrain. Our team ensures efficient upgrades while respecting the local environment.',
+            "À Piedmont, nous offrons des services de rénovation en plomberie qui tiennent compte des défis uniques du terrain accidenté. Notre équipe assure des mises à niveau efficaces tout en respectant l'environnement local.",
 
           brownsburg:
-            "For renovations in Brownsburg, we combine modern techniques with respect for local heritage. Our expertise allows us to modernize your installations while preserving your property's unique character.",
+            'Pour les rénovations à Brownsburg, nous combinons techniques modernes et respect du patrimoine local. Notre expertise nous permet de moderniser vos installations tout en préservant le caractère unique de votre propriété.',
 
           'saint-jerome':
-            "In Saint-Jérôme, our renovation services adapt to the city's architectural diversity. We excel in modernizing plumbing systems for both historic buildings and commercial spaces.",
+            "À Saint-Jérôme, nos services de rénovation s'adaptent à la diversité architecturale de la ville. Nous excellons dans la modernisation des systèmes de plomberie tant pour les bâtiments historiques que les espaces commerciaux.",
 
           'morin-heights':
-            'Renovations in Morin-Heights benefit from our plumbing expertise adapted to mountainous conditions. We ensure durable upgrades that withstand local climate rigors.',
+            'Les rénovations à Morin-Heights bénéficient de notre expertise en plomberie adaptée aux conditions montagneuses. Nous assurons des mises à niveau durables qui résistent aux rigueurs du climat local.',
         },
       },
       excavation: {
@@ -430,8 +430,39 @@ export const siteContent = {
       },
       renovation: {
         title: 'Renovation',
-        description:
-          'Whether you are renovating an older home or modernizing a commercial space, our plumbing renovation service is here to ensure every detail meets current standards and your unique needs. We can replace or upgrade your existing installations, including piping, water heating systems, and drainage. Our technicians work to minimize disruptions during the process, for a fast and tidy renovation.',
+        descriptions: {
+          lachute:
+            "In Lachute, our plumbing renovation service adapts to the specific needs of heritage homes and modern buildings. Our local team understands Lachute's unique architecture and offers solutions that preserve your property's character while modernizing your installations.",
+
+          'wentworth-north':
+            "Renovation projects in Wentworth-North benefit from our expertise in plumbing modernization adapted to mountainous challenges. We excel in upgrading existing systems to meet the region's rigorous climate conditions.",
+
+          'val-david':
+            "In Val-David, we specialize in plumbing renovations that respect the artistic character of properties. Our approach combines technical innovation with aesthetic sensitivity to modernize your installations while preserving your space's unique charm.",
+
+          prevost:
+            'For renovations in Prévost, we offer solutions that respect local architecture while integrating modern technologies. Our team is expert in modernizing plumbing systems in both historic houses and contemporary homes.',
+
+          gore: "As local Gore plumbers, we understand the particularities of renovations in our community. We offer personalized solutions that modernize your installations while respecting your property's unique character.",
+
+          'saint-sauveur':
+            'In Saint-Sauveur, our plumbing renovation services adapt to the varied needs of this dynamic tourist town. Whether for a mountain chalet or downtown business, we ensure efficient and lasting renovations.',
+
+          'sainte-adele':
+            'Renovation projects in Sainte-Adèle benefit from our expertise in plumbing modernization adapted to mountainous terrain. We excel in upgrading existing systems for better energy efficiency.',
+
+          piedmont:
+            'In Piedmont, we offer plumbing renovation services that take into account the unique challenges of rugged terrain. Our team ensures efficient upgrades while respecting the local environment.',
+
+          brownsburg:
+            "For renovations in Brownsburg, we combine modern techniques with respect for local heritage. Our expertise allows us to modernize your installations while preserving your property's unique character.",
+
+          'saint-jerome':
+            "In Saint-Jérôme, our renovation services adapt to the city's architectural diversity. We excel in modernizing plumbing systems for both historic buildings and commercial spaces.",
+
+          'morin-heights':
+            'Renovations in Morin-Heights benefit from our plumbing expertise adapted to mountainous conditions. We ensure durable upgrades that withstand local climate rigors.',
+        },
       },
       excavation: {
         title: 'Excavation',
