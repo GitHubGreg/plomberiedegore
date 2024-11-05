@@ -10,7 +10,9 @@ export function generateCityMetadata(params, isEnglish) {
     notFound()
   }
 
-  const title = isEnglish ? `${city.id} Plumbing` : `Plomberie de ${city.id}`
+  const title = isEnglish
+    ? `${city.id} Plumbing - ${siteContent.en.services.sectors.title}`
+    : `Plomberie de ${city.id} - ${siteContent.fr.services.sectors.title}`
 
   return {
     title,
@@ -33,8 +35,8 @@ export function generateServiceMetadata(params, isEnglish) {
     : siteContent.fr.services[service.id].title
 
   const title = isEnglish
-    ? `${serviceTitle} - ${city.id} Plumbing`
-    : `${serviceTitle} - Plomberie de ${city.id}`
+    ? `${serviceTitle} - ${city.id} Plumbing - ${siteContent.en.services.sectors.title}`
+    : `${serviceTitle} - Plomberie de ${city.id} - ${siteContent.fr.services.sectors.title}`
 
   return {
     title,
