@@ -2,6 +2,10 @@ import { CITIES, SERVICES } from '@/lib/constants'
 import { notFound } from 'next/navigation'
 import { siteContent } from '@/content/siteContent'
 
+export async function generateHomeMetadata(isEnglish) {
+  return generateCityMetadata({ city: 'gore' }, isEnglish)
+}
+
 export async function generateCityMetadata(params, isEnglish) {
   const citySlug = params.city
   const city = CITIES.find((c) => c.slug === citySlug)
