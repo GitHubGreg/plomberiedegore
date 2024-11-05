@@ -8,7 +8,7 @@ import {
   PopoverPanel,
 } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter, usePathname, useParams } from 'next/navigation'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -57,6 +57,14 @@ function MobileNavLink(props) {
 export function Header() {
   const { t, toggleLanguage, language } = useLanguage()
   const pathname = usePathname()
+  const params = useParams()
+  const isEnglish = language === 'en'
+
+  // Get current city from URL params, default to 'gore'
+  const citySlug = params?.city || 'gore'
+
+  // Construct home URL based on language and city
+  const homeUrl = isEnglish ? `/en/${citySlug}` : `/${citySlug}`
 
   const handleLanguageToggle = () => {
     toggleLanguage()
@@ -67,7 +75,7 @@ export function Header() {
       <nav>
         <Container className="relative z-50 flex justify-between py-8">
           <div className="relative z-10 flex items-center gap-16">
-            <Link href={getLocalizedPath('/', language)} aria-label="Home">
+            <Link href={homeUrl} aria-label="Home">
               <Logo className="h-10 w-auto" />
             </Link>
             <div className="hidden lg:flex lg:gap-2 xl:gap-5">
@@ -150,7 +158,7 @@ export function Header() {
             </Link>
             <Button
               href={`tel:${PHONE.link}`}
-              className="hidden text-sm lg:block lg:text-xs xl:text-sm"
+              className="hidden text-sm hover:bg-gray-600 lg:block lg:text-xs xl:text-sm"
             >
               {PHONE.display}
             </Button>

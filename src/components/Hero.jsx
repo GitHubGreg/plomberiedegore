@@ -102,7 +102,7 @@ export function Hero({ citySlug = 'gore' }) {
             <div className="mt-8">
               <a
                 href={`tel:${PHONE.link}`}
-                className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 text-lg font-semibold text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 text-lg font-semibold text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400"
               >
                 {PHONE.display}
               </a>
