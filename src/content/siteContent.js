@@ -314,36 +314,36 @@ export const siteContent = {
     otherCitiesWeServe: 'Autres villes desservies',
     cityDescriptions: {
       lachute:
-        "In Lachute, we are your trusted partner for all your plumbing needs. Whether for new installations, emergency repairs, or regular maintenance, our local team provides reliable and professional services to residential, commercial, and industrial clients. Our deep understanding of Lachute's plumbing systems ensures efficient and lasting solutions.",
+        "À Lachute, nous sommes votre partenaire de confiance pour tous vos besoins en plomberie. Que ce soit pour une installation neuve, des réparations urgentes ou de l'entretien régulier, notre équipe locale offre des services fiables et professionnels aux clients résidentiels, commerciaux et industriels. Notre connaissance approfondie des systèmes de plomberie de Lachute nous permet d'assurer des solutions efficaces et durables.",
 
       'wentworth-north':
-        'In Wentworth North, we understand the unique challenges of plumbing in mountainous regions. Our specialized team offers comprehensive services adapted to local conditions, from new installations to emergency repairs. Available 24/7, we ensure quick and efficient interventions, even in the most challenging winter conditions.',
+        "À Wentworth-Nord, nous comprenons les défis uniques de la plomberie en région montagneuse. Notre équipe spécialisée offre des services complets adaptés aux conditions locales, des installations neuves aux réparations d'urgence. Disponibles 24/7, nous assurons des interventions rapides et efficaces, même dans les conditions hivernales les plus difficiles.",
 
       'val-david':
-        "Proudly serving the Val-David community, we offer plumbing services that respect your artistic town's unique character. From drain cleaning to complex installations, our qualified team combines technical expertise with an environmentally respectful approach for all your plumbing projects.",
+        "Servant fièrement la communauté de Val-David, nous offrons des services de plomberie qui respectent le caractère unique de votre ville artistique. Du débouchage aux installations complexes, notre équipe qualifiée combine expertise technique et approche respectueuse de l'environnement pour tous vos projets de plomberie.",
 
       prevost:
-        'In Prévost, our plumbing expertise extends to all types of installations, from historic homes to new constructions. Our local team provides professional services 24/7, ensuring lasting solutions for all your residential, commercial, and industrial plumbing needs.',
+        "À Prévost, notre expertise en plomberie s'étend à tous les types d'installations, des maisons historiques aux nouvelles constructions. Notre équipe locale assure des services professionnels 24/7, garantissant des solutions durables pour tous vos besoins en plomberie résidentielle, commerciale et industrielle.",
 
-      gore: 'As Gore-based plumbers, we are particularly dedicated to serving our local community. Our qualified team offers comprehensive plumbing services, available 24/7 to meet all your needs. Our deep knowledge of local terrain and systems allows us to ensure efficient and lasting solutions.',
+      gore: "En tant que plombiers basés à Gore, nous sommes particulièrement dévoués à servir notre communauté locale. Notre équipe qualifiée offre des services complets de plomberie, disponibles 24/7 pour répondre à tous vos besoins. Notre connaissance approfondie du terrain et des systèmes locaux nous permet d'assurer des solutions efficaces et durables.",
 
       'saint-sauveur':
-        'In Saint-Sauveur, we adapt our plumbing services to the unique needs of a dynamic tourist town. Our experienced team offers professional solutions for residences, businesses, and chalets, ensuring quick and efficient interventions 24/7.',
+        "À Saint-Sauveur, nous adaptons nos services de plomberie aux besoins uniques d'une ville touristique dynamique. Notre équipe expérimentée offre des solutions professionnelles pour les résidences, commerces et chalets, assurant des interventions rapides et efficaces 24/7.",
 
       'sainte-adele':
-        'In Sainte-Adèle, we offer plumbing services adapted to mountainous terrain challenges. Whether for an emergency or planned installation, our qualified team ensures professional interventions 24/7, guaranteeing lasting solutions for all your plumbing needs.',
+        'À Sainte-Adèle, nous offrons des services de plomberie adaptés aux défis du terrain montagneux. Que ce soit pour une urgence ou une installation planifiée, notre équipe qualifiée assure des interventions professionnelles 24/7, garantissant des solutions durables pour tous vos besoins en plomberie.',
 
       piedmont:
-        'In Piedmont, our plumbing service is specially adapted to steep terrain challenges. Available 24/7, we offer professional solutions for all types of installations, from emergency repairs to regular maintenance, taking into account local particularities.',
+        "À Piedmont, notre service de plomberie est spécialement adapté aux défis du terrain escarpé. Disponibles 24/7, nous offrons des solutions professionnelles pour tous types d'installations, des réparations urgentes à l'entretien régulier, en tenant compte des particularités locales.",
 
       brownsburg:
-        "In Brownsburg, we offer comprehensive and reliable plumbing services to meet our community's needs. Our qualified team ensures professional interventions 24/7, from new installations to emergency repairs, with special attention to local specificities.",
+        'À Brownsburg, nous offrons des services de plomberie complets et fiables pour répondre aux besoins de notre communauté. Notre équipe qualifiée assure des interventions professionnelles 24/7, des installations neuves aux réparations urgentes, avec une attention particulière aux spécificités locales.',
 
       'saint-jerome':
-        'In Saint-Jérôme, our plumbing service meets the diverse needs of an expanding city. Our large team ensures rapid interventions 24/7 for all types of projects, from residential installations to complex commercial systems.',
+        "À Saint-Jérôme, notre service de plomberie répond aux besoins diversifiés d'une ville en pleine expansion. Notre équipe nombreuse assure des interventions rapides 24/7 pour tous types de projets, des installations résidentielles aux systèmes commerciaux complexes.",
 
       'morin-heights':
-        "In Morin-Heights, we offer plumbing services perfectly adapted to mountainous conditions. Our experienced team ensures professional interventions 24/7, guaranteeing lasting solutions that take into account the region's particular challenges.",
+        'À Morin-Heights, nous offrons des services de plomberie parfaitement adaptés aux conditions montagneuses. Notre équipe expérimentée assure des interventions professionnelles 24/7, garantissant des solutions durables qui tiennent compte des défis particuliers de la région.',
     },
   },
   en: {
