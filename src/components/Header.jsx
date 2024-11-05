@@ -125,19 +125,22 @@ export function Header() {
                             <NavLinks />
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            <Link
+                            <Button
                               href={getLocalizedPath(
                                 pathname,
                                 language === 'en' ? 'fr' : 'en',
                               )}
                               onClick={handleLanguageToggle}
-                              className="hidden justify-center rounded-lg border border-gray-300 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing.2)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80 lg:inline-flex lg:text-xs xl:text-sm"
+                              color="white"
+                              variant="outline"
+                              size="responsive"
                             >
                               {t('otherLanguage')}
-                            </Link>
+                            </Button>
                             <Button
                               href={`tel:${PHONE.link}`}
-                              className="text-sm lg:text-xs xl:text-sm"
+                              color="gray"
+                              size="responsive"
                             >
                               {PHONE.display}
                             </Button>

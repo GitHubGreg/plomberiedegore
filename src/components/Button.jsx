@@ -13,7 +13,8 @@ const sizeStyles = {
   small: 'py-2 px-3 text-sm',
   medium: 'py-2.5 px-4 text-sm lg:text-xs xl:text-sm',
   large: 'py-4 px-8 text-lg',
-  responsive: 'py-2 px-3 text-xs xl:py-2 xl:px-3 xl:text-sm',
+  responsive:
+    'py-2 px-3 text-sm lg:py-2 lg:px-3 lg:text-xs xl:py-2 xl:px-3 xl:text-sm',
 }
 
 const variantStyles = {
