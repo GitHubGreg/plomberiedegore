@@ -36,7 +36,7 @@ export function OtherServices() {
           <Link
             key={service.id}
             href={getLocalizedPath(`${citySlug}/${service.slug}`, language)}
-            className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+            className="rounded-lg bg-gray-100 px-4 py-2 text-sm text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
           >
             {service.title}
           </Link>
