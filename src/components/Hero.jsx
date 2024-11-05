@@ -10,6 +10,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { SERVICES, CITIES, PHONE } from '@/lib/constants'
 import logo from '@/images/logo.svg'
 import { getLocalizedPath } from '@/lib/utils'
+import { Button } from './Button'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -99,14 +100,9 @@ export function Hero({ citySlug = 'gore' }) {
               {isEnglish ? `${city} Plumbing` : `Plomberie de ${city}`}
             </h1>
             <p className="mt-6 text-lg text-gray-600">{t('description')}</p>
-            <div className="mt-8">
-              <a
-                href={`tel:${PHONE.link}`}
-                className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400"
-              >
-                {PHONE.display}
-              </a>
-            </div>
+            <Button href={`tel:${PHONE.link}`} className="mt-8" size="large">
+              {PHONE.display}
+            </Button>
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
             <BackgroundIllustration className="absolute left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />

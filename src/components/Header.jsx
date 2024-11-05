@@ -149,16 +149,19 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <Link
+            <Button
               href={getLocalizedPath(pathname, language === 'en' ? 'fr' : 'en')}
               onClick={handleLanguageToggle}
-              className="hidden justify-center rounded-lg border border-gray-300 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing.2)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80 lg:inline-flex lg:text-xs xl:text-sm"
+              color="white"
+              variant="outline"
+              className="hidden justify-center text-sm lg:inline-flex lg:text-xs xl:text-sm"
             >
               {t('otherLanguage')}
-            </Link>
+            </Button>
             <Button
               href={`tel:${PHONE.link}`}
-              className="hidden text-sm transition-colors hover:bg-gray-600 lg:block lg:text-xs xl:text-sm"
+              color="gray"
+              className="hidden text-sm transition-colors lg:block lg:text-xs xl:text-sm"
             >
               {PHONE.display}
             </Button>
