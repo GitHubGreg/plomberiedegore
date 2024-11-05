@@ -44,16 +44,6 @@ function ChevronUpIcon(props) {
   )
 }
 
-function MobileNavLink(props) {
-  return (
-    <PopoverButton
-      as={Link}
-      className="block text-base leading-7 tracking-tight text-gray-700"
-      {...props}
-    />
-  )
-}
-
 export function Header() {
   const { t, toggleLanguage, language } = useLanguage()
   const pathname = usePathname()
@@ -63,8 +53,8 @@ export function Header() {
   // Get current city from URL params, default to 'gore'
   const citySlug = params?.city || 'gore'
 
-  // Construct home URL based on language and city
-  const homeUrl = isEnglish ? `/en/${citySlug}` : `/${citySlug}`
+  // Construct home URL based on language
+  const homeUrl = isEnglish ? `/en/` : `/`
 
   const handleLanguageToggle = () => {
     toggleLanguage()
