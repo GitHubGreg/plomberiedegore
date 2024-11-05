@@ -10,21 +10,25 @@ export async function generateCityMetadata(params, isEnglish) {
     notFound()
   }
 
+  const siteName = isEnglish ? `${city.id} Plumbing` : `Plomberie de ${city.id}`
+
   const title = isEnglish
-    ? `${city.id} Plumbing - ${siteContent.en.services.sectors.title}`
-    : `Plomberie de ${city.id} - ${siteContent.fr.services.sectors.title}`
+    ? `${siteName} - ${siteContent.en.services.sectors.title}`
+    : `${siteName} - ${siteContent.fr.services.sectors.title}`
 
   const content = isEnglish ? siteContent.en : siteContent.fr
   const description = content.cityDescriptions[city.id]
 
-  // Use the first service's image for city pages
   const defaultImage = `/images/services/${SERVICES[0].slug}.jpg`
 
   return {
     title,
     description,
     openGraph: {
+      title,
+      description,
       images: [defaultImage],
+      siteName,
     },
     twitter: {
       card: 'summary_large_image',
@@ -44,25 +48,29 @@ export async function generateServiceMetadata(params, isEnglish) {
     notFound()
   }
 
+  const siteName = isEnglish ? `${city.id} Plumbing` : `Plomberie de ${city.id}`
+
   const serviceTitle = isEnglish
     ? siteContent.en.services[service.id].title
     : siteContent.fr.services[service.id].title
 
   const title = isEnglish
-    ? `${serviceTitle} - ${city.id} Plumbing - ${siteContent.en.services.sectors.title}`
-    : `${serviceTitle} - Plomberie de ${city.id} - ${siteContent.fr.services.sectors.title}`
+    ? `${serviceTitle} - ${siteName} - ${siteContent.en.services.sectors.title}`
+    : `${serviceTitle} - ${siteName} - ${siteContent.fr.services.sectors.title}`
 
   const content = isEnglish ? siteContent.en : siteContent.fr
   const description = content.services[service.id].descriptions[city.id]
 
-  // Use the specific service's image
   const serviceImage = `/images/services/${service.slug}.jpg`
 
   return {
     title,
     description,
     openGraph: {
+      title,
+      description,
       images: [serviceImage],
+      siteName,
     },
     twitter: {
       card: 'summary_large_image',
