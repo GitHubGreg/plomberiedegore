@@ -88,7 +88,7 @@ export const siteContent = {
             "In Lachute, our plumbing renovation service adapts to the specific needs of heritage homes and modern buildings. Our local team understands Lachute's unique architecture and offers solutions that preserve your property's character while modernizing your installations.",
 
           'wentworth-north':
-            "Renovation projects in Wentworth North benefit from our expertise in plumbing modernization adapted to mountainous challenges. We excel in upgrading existing systems to meet the region's rigorous climate conditions.",
+            "Renovation projects in Wentworth-North benefit from our expertise in plumbing modernization adapted to mountainous challenges. We excel in upgrading existing systems to meet the region's rigorous climate conditions.",
 
           'val-david':
             "In Val-David, we specialize in plumbing renovations that respect the artistic character of properties. Our approach combines technical innovation with aesthetic sensitivity to modernize your installations while preserving your space's unique charm.",
@@ -363,7 +363,7 @@ export const siteContent = {
             "In Lachute, we are your trusted partner for all your plumbing needs. Whether for new installations, emergency repairs, or regular maintenance, our local team provides reliable and professional services to residential, commercial, and industrial clients. Our deep understanding of Lachute's plumbing systems ensures efficient and lasting solutions.",
 
           'wentworth-north':
-            'In Wentworth North, we understand the unique challenges of plumbing in mountainous regions. Our specialized team offers comprehensive services adapted to local conditions, from new installations to emergency repairs. Available 24/7, we ensure quick and efficient interventions, even in the most challenging winter conditions.',
+            'In Wentworth-North, we understand the unique challenges of plumbing in mountainous regions. Our specialized team offers comprehensive services adapted to local conditions, from new installations to emergency repairs. Available 24/7, we ensure quick and efficient interventions, even in the most challenging winter conditions.',
 
           'val-david':
             "Proudly serving the Val-David community, we offer plumbing services that respect your artistic town's unique character. From drain cleaning to complex installations, our qualified team combines technical expertise with an environmentally respectful approach for all your plumbing projects.",
@@ -399,7 +399,7 @@ export const siteContent = {
             "In Lachute, our new construction expertise is built on a deep understanding of local codes and soil conditions. We work closely with local contractors to ensure optimal plumbing installations in the area's new residential and commercial developments.",
 
           'wentworth-north':
-            "For new constructions in Wentworth North, we design plumbing systems adapted to the region's unique mountainous terrain. Our team takes into account specific local climate challenges to ensure durable and efficient installations.",
+            "For new constructions in Wentworth-North, we design plumbing systems adapted to the region's unique mountainous terrain. Our team takes into account specific local climate challenges to ensure durable and efficient installations.",
 
           'val-david':
             "In Val-David, we excel at installing plumbing systems for new constructions while respecting the town's artistic aesthetic. Our solutions are designed to blend seamlessly with the local environment while delivering optimal performance.",
@@ -440,7 +440,7 @@ export const siteContent = {
             "In Lachute, our professional excavation service is built on a deep understanding of local terrain. Equipped with modern machinery, we perform precise excavation work for underground plumbing system installation or repair, while respecting Lachute's soil characteristics.",
 
           'wentworth-north':
-            'In Wentworth North, our excavation expertise is adapted to mountainous terrain challenges. We use specialized techniques to manage the slopes and rocky soils characteristic of the region, ensuring safe and efficient excavation work.',
+            'In Wentworth-North, our excavation expertise is adapted to mountainous terrain challenges. We use specialized techniques to manage the slopes and rocky soils characteristic of the region, ensuring safe and efficient excavation work.',
 
           'val-david':
             "For Val-David, our excavation services respect the town's unique artistic environment. Our meticulous approach ensures precise work that preserves your property's integrity while allowing for necessary installations.",
@@ -476,7 +476,7 @@ export const siteContent = {
             "In Lachute, our drain cleaning service responds quickly to plumbing emergencies. Our local team uses cutting-edge equipment, including inspection cameras and high-pressure cleaning systems, to effectively resolve blockage issues specific to Lachute's plumbing systems.",
 
           'wentworth-north':
-            'In Wentworth North, we offer drain cleaning services adapted to the challenges of mountain region drainage systems. Our local expertise allows us to quickly address blockages caused by the particular terrain and climate conditions.',
+            'In Wentworth-North, we offer drain cleaning services adapted to the challenges of mountain region drainage systems. Our local expertise allows us to quickly address blockages caused by the particular terrain and climate conditions.',
 
           'val-david':
             'For Val-David, our drain cleaning service combines efficiency with environmental respect. We use advanced techniques to resolve blockage issues while preserving the integrity of local plumbing systems.',
@@ -512,7 +512,7 @@ export const siteContent = {
             "In Lachute, our 24/7 emergency service ensures rapid response for all plumbing issues. Our local team can be on-site within minutes, equipped to effectively handle emergencies specific to Lachute's plumbing systems.",
 
           'wentworth-north':
-            'In Wentworth North, we offer emergency service adapted to the particular challenges of the mountainous region. Our team is available day and night to respond quickly to emergencies, even in the most difficult winter conditions.',
+            'In Wentworth-North, we offer emergency service adapted to the particular challenges of the mountainous region. Our team is available day and night to respond quickly to emergencies, even in the most difficult winter conditions.',
 
           'val-david':
             'For Val-David, our 24/7 emergency service combines speed with local expertise. We intervene promptly to minimize damage and effectively resolve any urgent plumbing issues in the region.',
@@ -548,7 +548,7 @@ export const siteContent = {
             "In Lachute, our pump expertise covers all residential and commercial needs. Our local team ensures the installation and maintenance of well pumps, sump pumps, and pressure systems, with deep knowledge of Lachute's specific conditions.",
 
           'wentworth-north':
-            "In Wentworth North, we offer specialized pump services adapted to mountainous terrain. Our expertise includes installation and maintenance of robust pumping systems designed to withstand the region's rigorous climate conditions.",
+            "In Wentworth-North, we offer specialized pump services adapted to mountainous terrain. Our expertise includes installation and maintenance of robust pumping systems designed to withstand the region's rigorous climate conditions.",
 
           'val-david':
             "For Val-David, we offer customized pumping solutions that respect the local environment. Our team ensures the installation and maintenance of all types of pumps, with special attention to the specific needs of Val-David's homes and chalets.",
@@ -584,7 +584,7 @@ export const siteContent = {
             "In Lachute, our well expertise is based on a deep understanding of local groundwater. Our team ensures complete well installation, from terrain analysis to filtration systems, while respecting the region's strict standards.",
 
           'wentworth-north':
-            'In Wentworth North, we specialize in well installation adapted to mountainous terrain. Our expertise allows us to locate the best water sources and install robust systems that withstand rigorous climate conditions.',
+            'In Wentworth-North, we specialize in well installation adapted to mountainous terrain. Our expertise allows us to locate the best water sources and install robust systems that withstand rigorous climate conditions.',
 
           'val-david':
             "For Val-David, we offer well services that respect the local environment. Our approach combines technical expertise with respect for the natural setting, ensuring quality water for the region's homes and chalets.",
@@ -633,7 +633,7 @@ export const siteContent = {
         "In Lachute, we are your trusted partner for all your plumbing needs. Whether for new installations, emergency repairs, or regular maintenance, our local team provides reliable and professional services to residential, commercial, and industrial clients. Our deep understanding of Lachute's plumbing systems ensures efficient and lasting solutions.",
 
       'wentworth-north':
-        'In Wentworth North, we understand the unique challenges of plumbing in mountainous regions. Our specialized team offers comprehensive services adapted to local conditions, from new installations to emergency repairs. Available 24/7, we ensure quick and efficient interventions, even in the most challenging winter conditions.',
+        'In Wentworth-North, we understand the unique challenges of plumbing in mountainous regions. Our specialized team offers comprehensive services adapted to local conditions, from new installations to emergency repairs. Available 24/7, we ensure quick and efficient interventions, even in the most challenging winter conditions.',
 
       'val-david':
         "Proudly serving the Val-David community, we offer plumbing services that respect your artistic town's unique character. From drain cleaning to complex installations, our qualified team combines technical expertise with an environmentally respectful approach for all your plumbing projects.",

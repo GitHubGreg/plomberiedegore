@@ -13,66 +13,77 @@ const reviewsContent = {
       body: "Je ne peux pas les recommander assez. Des professionnels gentils et extrêmement compétents. Merci Roxanne et l'équipe!",
       author: 'Greg M.',
       rating: 5,
+      city: 'Ste-Anne-des-Lacs',
     },
     {
       title: 'Service rapide et professionnel',
       body: "Une fuite d'eau urgente à 23h, ils sont venus en 30 minutes. Travail impeccable et prix raisonnable. Je recommande fortement!",
       author: 'Marcel T.',
       rating: 5,
+      city: 'Wentworth-North',
     },
     {
       title: 'Excellente équipe',
       body: 'Ils ont refait toute la plomberie de ma salle de bain. Propre, efficace et dans les temps. Vraiment satisfait du résultat.',
       author: 'Sylvie B.',
       rating: 5,
+      city: 'Morin-Heights',
     },
     {
       title: 'Travail de qualité',
       body: "Mon drain était complètement bouché, ils ont utilisé une caméra pour trouver le problème et l'ont réglé rapidement. Très professionnel!",
       author: 'Jean-Pierre L.',
       rating: 5,
+      city: 'Val-David',
     },
     {
       title: 'Service fiable',
       body: 'Deuxième fois que je fais appel à eux pour des réparations. Toujours ponctuels et efficaces. Prix honnêtes.',
       author: 'Françoise M.',
       rating: 5,
+      city: 'Prévost',
     },
     {
       title: 'Experts en plomberie',
       body: "Installation complète pour ma nouvelle maison. Tout a été fait selon les normes et ils ont même donné des conseils utiles pour l'entretien.",
       author: 'Robert D.',
       rating: 5,
+      city: 'Piedmont',
     },
     {
       title: "Service d'urgence excellent",
       body: "Un dégât d'eau en pleine nuit, ils sont venus tout de suite. Très rassurant d'avoir une équipe aussi compétente!",
       author: 'Louise P.',
       rating: 5,
+      city: 'Saint-Sauveur',
     },
     {
       title: 'Recommandé à 100%',
       body: 'Remplacement de chauffe-eau fait proprement et rapidement. Excellent service client et suivi.',
       author: 'Michel G.',
       rating: 5,
+      city: 'Val-David',
     },
     {
       title: 'Très satisfait',
       body: "Installation d'une pompe de puisard. Travail soigné et bien expliqué. Je recommande!",
       author: 'Pierre C.',
       rating: 5,
+      city: 'Saint-Sauveur',
     },
     {
       title: 'Service exceptionnel',
       body: 'Rénovation complète de salle de bain. Équipe professionnelle et travail de qualité. Très content du résultat!',
       author: 'André B.',
       rating: 5,
+      city: 'Brownsburg',
     },
     {
       title: 'Excellent travail',
       body: "Problème de pression d'eau réglé rapidement. Service courtois et professionnel. Prix raisonnable.",
       author: 'Marie-Claude R.',
       rating: 5,
+      city: 'Gore',
     },
   ],
   en: [
@@ -81,66 +92,77 @@ const reviewsContent = {
       body: 'Cannot recommend them highly enough. Kind and extremely skilled professionals. Thanks Roxanne and team!',
       author: 'Greg M.',
       rating: 5,
+      city: 'Ste-Anne-des-Lacs',
     },
     {
       title: 'Fast and professional service',
       body: 'Emergency water leak at 11 PM, they came within 30 minutes. Impeccable work and reasonable price. Highly recommend!',
       author: 'Marcel T.',
       rating: 5,
+      city: 'Wentworth-North',
     },
     {
       title: 'Excellent team',
       body: 'They redid all the plumbing in my bathroom. Clean, efficient and on time. Really satisfied with the result.',
       author: 'Sylvie B.',
       rating: 5,
+      city: 'Morin-Heights',
     },
     {
       title: 'Quality work',
       body: 'My drain was completely blocked, they used a camera to find the problem and fixed it quickly. Very professional!',
       author: 'Jean-Pierre L.',
       rating: 5,
+      city: 'Val-David',
     },
     {
       title: 'Reliable service',
       body: 'Second time using them for repairs. Always punctual and efficient. Honest pricing.',
       author: 'Françoise M.',
       rating: 5,
+      city: 'Prévost',
     },
     {
       title: 'Plumbing experts',
       body: 'Complete installation for my new house. Everything was done to code and they even gave useful maintenance tips.',
       author: 'Robert D.',
       rating: 5,
+      city: 'Piedmont',
     },
     {
       title: 'Excellent emergency service',
       body: 'Had a water damage in the middle of the night, they came right away. Very reassuring to have such a competent team!',
       author: 'Louise P.',
       rating: 5,
+      city: 'Saint-Sauveur',
     },
     {
       title: '100% Recommended',
       body: 'Water heater replacement done cleanly and quickly. Excellent customer service and follow-up.',
       author: 'Michel G.',
       rating: 5,
+      city: 'Val-David',
     },
     {
       title: 'Very satisfied',
       body: 'Sump pump installation. Careful work and well explained. I recommend!',
       author: 'Pierre C.',
       rating: 5,
+      city: 'Saint-Sauveur',
     },
     {
       title: 'Exceptional service',
       body: 'Complete bathroom renovation. Professional team and quality work. Very happy with the result!',
       author: 'André B.',
       rating: 5,
+      city: 'Brownsburg',
     },
     {
       title: 'Excellent work',
       body: 'Water pressure problem fixed quickly. Courteous and professional service. Reasonable price.',
       author: 'Marie-Claude R.',
       rating: 5,
+      city: 'Gore',
     },
   ],
 }
@@ -169,7 +191,7 @@ function StarRating({ rating }) {
   )
 }
 
-function Review({ title, body, author, rating, className, ...props }) {
+function Review({ title, body, author, rating, city, className, ...props }) {
   let animationDelay = useMemo(() => {
     let possibleAnimationDelays = ['0s', '0.1s', '0.2s', '0.3s', '0.4s', '0.5s']
     return possibleAnimationDelays[
@@ -194,7 +216,7 @@ function Review({ title, body, author, rating, className, ...props }) {
         <p className="mt-3 text-base leading-7">{body}</p>
       </blockquote>
       <figcaption className="mt-3 text-sm text-gray-600 before:content-['–_']">
-        {author}
+        {author}, {city}
       </figcaption>
     </figure>
   )

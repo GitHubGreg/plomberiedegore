@@ -11,7 +11,7 @@ export const SERVICES = [
 
 export const CITIES = [
   { id: 'Lachute', slug: 'lachute' },
-  { id: 'Wentworth North', slug: 'wentworth-north' },
+  { id: 'Wentworth-Nord', slug: 'wentworth-north' },
   { id: 'Val-David', slug: 'val-david' },
   { id: 'Prévost', slug: 'prevost' },
   { id: 'Gore', slug: 'gore' },
