@@ -16,7 +16,7 @@ export function PageTitle() {
   return (
     <Container className="mb-16 mt-24">
       <h1 className="text-center text-4xl font-medium tracking-tight text-gray-900">
-        {isEnglish ? `Plumber in ${city}` : `Plombier à ${city}`}
+        {isEnglish ? `${city} Plumbing` : `Plombier de ${city}`}
       </h1>
     </Container>
   )
