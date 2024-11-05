@@ -76,6 +76,7 @@ export function CallToAction() {
             href={`tel:${PHONE.link}`}
             size="large"
             color="white"
+            variant="outline"
           >
             {PHONE.display}
           </Button>

@@ -74,11 +74,11 @@ export function Header() {
     <header>
       <nav>
         <Container className="relative z-50 flex justify-between py-8">
-          <div className="relative z-10 flex items-center gap-16">
+          <div className="relative z-10 flex items-center lg:gap-1 xl:gap-2">
             <Link href={homeUrl} aria-label="Home">
               <Logo className="h-10 w-auto" />
             </Link>
-            <div className="hidden lg:flex lg:gap-2 xl:gap-5">
+            <div className="hidden lg:flex lg:gap-1 xl:gap-2">
               <NavLinks />
             </div>
           </div>
@@ -149,24 +149,29 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <Button
-              href={getLocalizedPath(pathname, language === 'en' ? 'fr' : 'en')}
-              onClick={handleLanguageToggle}
-              color="white"
-              variant="outline"
-              size="small"
-              className="hidden justify-center text-sm lg:inline-flex lg:text-xs xl:text-sm"
-            >
-              {t('otherLanguage')}
-            </Button>
-            <Button
-              href={`tel:${PHONE.link}`}
-              color="gray"
-              size="small"
-              className="hidden text-sm transition-colors lg:block lg:text-xs xl:text-sm"
-            >
-              {PHONE.display}
-            </Button>
+            <div className="flex items-center lg:gap-1 xl:gap-2">
+              <Button
+                href={getLocalizedPath(
+                  pathname,
+                  language === 'en' ? 'fr' : 'en',
+                )}
+                onClick={handleLanguageToggle}
+                color="white"
+                variant="outline"
+                size="responsive"
+                className="hidden lg:inline-block"
+              >
+                {t('otherLanguage')}
+              </Button>
+              <Button
+                href={`tel:${PHONE.link}`}
+                color="gray"
+                size="responsive"
+                className="hidden lg:inline-block"
+              >
+                {PHONE.display}
+              </Button>
+            </div>
           </div>
         </Container>
       </nav>

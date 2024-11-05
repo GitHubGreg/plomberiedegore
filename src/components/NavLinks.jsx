@@ -16,14 +16,6 @@ export function NavLinks() {
   // Check if we're currently on this service's page
   const isCurrentService = (serviceSlug) => {
     const isActive = params?.slug === serviceSlug
-    console.log(
-      'Service slug:',
-      serviceSlug,
-      'Current slug:',
-      params?.slug,
-      'Is active:',
-      isActive,
-    )
     return isActive
   }
 
@@ -33,11 +25,10 @@ export function NavLinks() {
         <Button
           key={service.id}
           href={getLocalizedPath(`${citySlug}/${service.slug}`, language)}
-          size="xsmall"
+          size="responsive"
           color="white"
           variant="outline"
           isActive={isCurrentService(service.slug)}
-          className="flex items-center justify-center"
         >
           {t(`services.${service.id}.title`)}
         </Button>

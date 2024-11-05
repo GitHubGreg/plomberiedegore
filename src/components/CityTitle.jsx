@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import Image from 'next/image'
 import { Container } from '@/components/Container'
 import logo from '@/images/logo.svg'
@@ -11,10 +12,14 @@ export function CityTitle({ citySlug = 'gore' }) {
   const isEnglish = language === 'en'
   const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
   const title = isEnglish ? `${city} Plumbing` : `Plomberie de ${city}`
+
+  // Construct home URL based on language and city, same as Header and PageTitle
+  const homeUrl = isEnglish ? `/en/${citySlug}` : `/${citySlug}`
+
   return (
     <div className="pt-12">
       <Container>
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-4 transition-colors">
           <Image
             src={logo}
             alt="Logo"
@@ -23,9 +28,11 @@ export function CityTitle({ citySlug = 'gore' }) {
             height={48}
             priority
           />
-          <h1 className="text-4xl font-medium tracking-tight text-gray-900">
-            {title}
-          </h1>
+          <Link href={homeUrl}>
+            <h1 className="text-4xl font-medium tracking-tight text-gray-900 transition-colors hover:text-gray-600">
+              {title}
+            </h1>{' '}
+          </Link>
         </div>
       </Container>
     </div>

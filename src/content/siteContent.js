@@ -85,7 +85,7 @@ export const siteContent = {
           'Our plumbing services cover all aspects of your water, gas, and drainage needs, whether for new installations, repairs, or maintenance. Our skilled plumbers have the expertise to handle all types of systems, from small domestic repairs to complex installations for commercial or industrial buildings. With our meticulous approach and the use of high-quality materials, we ensure durable and effective solutions for all your plumbing projects.',
       },
       newConstruction: {
-        title: 'New Construction',
+        title: 'New Building',
         description:
           'When building a home or commercial property, reliable and well-installed plumbing is essential to prevent future issues. Our team specializing in new construction manages the complete installation of plumbing systems, from the initial design to the final setup. We work closely with contractors and architects to ensure that every aspect of the installation meets safety and energy efficiency standards.',
       },
