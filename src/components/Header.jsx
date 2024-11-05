@@ -66,7 +66,7 @@ export function Header() {
         <Container className="relative z-50 flex justify-between py-8">
           <div className="relative z-10 flex items-center lg:gap-1 xl:gap-2">
             <Link href={homeUrl} aria-label="Home">
-              <Logo className="h-10 w-auto" />
+              <Logo className="h-11 w-auto" />
             </Link>
             <div className="hidden lg:flex lg:gap-1 xl:gap-2">
               <NavLinks />
@@ -132,7 +132,7 @@ export function Header() {
                             </Button>
                             <Button
                               href={`tel:${PHONE.link}`}
-                              color="gray"
+                              color="blueGradient"
                               size="responsive"
                               onClick={() => close()}
                             >
@@ -162,7 +162,7 @@ export function Header() {
               </Button>
               <Button
                 href={`tel:${PHONE.link}`}
-                color="gray"
+                color="blueGradient"
                 size="responsive"
                 className="hidden lg:inline-block"
               >

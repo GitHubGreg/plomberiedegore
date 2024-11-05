@@ -19,11 +19,11 @@ const sizeStyles = {
 
 const variantStyles = {
   solid: {
-    cyan: 'relative overflow-hidden bg-cyan-500 text-white before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-white/10 active:bg-cyan-600 active:text-white/80 before:transition-colors',
+    blueGradient:
+      'relative overflow-hidden bg-gradient-to-br from-[#0C5788] to-[#001847] text-white before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-white/10 active:opacity-90 active:text-white/80 before:transition-colors',
     gray: 'bg-gray-900 text-white hover:bg-gray-600 active:bg-gray-600 active:text-white/80',
   },
   outline: {
-    gray: 'border-gray-300 text-gray-700 hover:border-gray-400 data-[active=true]:bg-gray-200 data-[active=true]:border-gray-200',
     white:
       'bg-white text-gray-700 hover:border-gray-400 data-[active=true]:bg-gray-200 data-[active=true]:border-gray-200',
   },

@@ -100,7 +100,12 @@ export function Hero({ citySlug = 'gore' }) {
               {isEnglish ? `${city} Plumbing` : `Plomberie de ${city}`}
             </h1>
             <p className="mt-6 text-lg text-gray-600">{t('description')}</p>
-            <Button href={`tel:${PHONE.link}`} className="mt-8" size="large">
+            <Button
+              href={`tel:${PHONE.link}`}
+              className="mt-8"
+              size="large"
+              color="blueGradient"
+            >
               {PHONE.display}
             </Button>
           </div>
@@ -110,8 +115,8 @@ export function Hero({ citySlug = 'gore' }) {
               <div className="mx-auto flex max-w-[366px] items-center justify-center">
                 <Image
                   src={logo}
-                  alt="Plomberie de Gore Logo"
-                  className="animate-float mt-12 h-auto w-full"
+                  alt={isEnglish ? `${city} Plumbing` : `Plomberie de ${city}`}
+                  className="animate-float mt-8 h-auto w-full"
                   priority
                 />
               </div>

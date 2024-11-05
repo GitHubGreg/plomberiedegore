@@ -124,7 +124,7 @@ function ServiceSection({ service, image, isEven, citySlug }) {
                     language,
                   )}
                   size="small"
-                  color="gray"
+                  color="blueGradient"
                   variant="solid"
                 >
                   {isEnglish ? 'Learn more' : 'En savoir plus'}
