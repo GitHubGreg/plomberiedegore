@@ -1,11 +1,13 @@
 export const siteContent = {
   fr: {
+    title: 'Plomberie de Gore',
+    features: 'Fonctionnalités',
     reviews: 'Avis',
     reviewsSubtitle:
       'Découvrez ce que nos clients satisfaits disent de nos services.',
     otherLanguage: 'English',
     description:
-      "Que ce soit pour une installation neuve, des réparations urgentes ou de l'entretien régulier, nous offrons des services fiables et professionnels pour les clients résidentiels, commerciaux et industriels. Du dé bouchage des canalisations aux installations complexes, notre équipe qualifiée est à votre service 24/7 pour assurer le bon fonctionnement de votre plomberie. Faites confiance à notre expertise pour des solutions durables et efficaces. Appelez-nous dès maintenant pour un service rapide et personnalisé!",
+      "Que ce soit pour une installation neuve, des réparations urgentes ou de l'entretien régulier, nous offrons des services fiables et professionnels pour les clients résidentiels, commerciaux et industriels. Du débouchage des canalisations aux installations complexes, notre équipe qualifiée est à votre service 24/7 pour assurer le bon fonctionnement de votre plomberie. Faites confiance à notre expertise pour des solutions durables et efficaces. Appelez-nous dès maintenant pour un service rapide et personnalisé!",
     services: {
       plumbing: {
         title: 'Plomberie',
@@ -310,12 +312,46 @@ export const siteContent = {
     copyright: "Droits d'auteur",
     all_rights_reserved: 'Tous droits réservés.',
     otherCitiesWeServe: 'Autres villes desservies',
+    cityDescriptions: {
+      lachute:
+        "In Lachute, we are your trusted partner for all your plumbing needs. Whether for new installations, emergency repairs, or regular maintenance, our local team provides reliable and professional services to residential, commercial, and industrial clients. Our deep understanding of Lachute's plumbing systems ensures efficient and lasting solutions.",
+
+      'wentworth-north':
+        'In Wentworth North, we understand the unique challenges of plumbing in mountainous regions. Our specialized team offers comprehensive services adapted to local conditions, from new installations to emergency repairs. Available 24/7, we ensure quick and efficient interventions, even in the most challenging winter conditions.',
+
+      'val-david':
+        "Proudly serving the Val-David community, we offer plumbing services that respect your artistic town's unique character. From drain cleaning to complex installations, our qualified team combines technical expertise with an environmentally respectful approach for all your plumbing projects.",
+
+      prevost:
+        'In Prévost, our plumbing expertise extends to all types of installations, from historic homes to new constructions. Our local team provides professional services 24/7, ensuring lasting solutions for all your residential, commercial, and industrial plumbing needs.',
+
+      gore: 'As Gore-based plumbers, we are particularly dedicated to serving our local community. Our qualified team offers comprehensive plumbing services, available 24/7 to meet all your needs. Our deep knowledge of local terrain and systems allows us to ensure efficient and lasting solutions.',
+
+      'saint-sauveur':
+        'In Saint-Sauveur, we adapt our plumbing services to the unique needs of a dynamic tourist town. Our experienced team offers professional solutions for residences, businesses, and chalets, ensuring quick and efficient interventions 24/7.',
+
+      'sainte-adele':
+        'In Sainte-Adèle, we offer plumbing services adapted to mountainous terrain challenges. Whether for an emergency or planned installation, our qualified team ensures professional interventions 24/7, guaranteeing lasting solutions for all your plumbing needs.',
+
+      piedmont:
+        'In Piedmont, our plumbing service is specially adapted to steep terrain challenges. Available 24/7, we offer professional solutions for all types of installations, from emergency repairs to regular maintenance, taking into account local particularities.',
+
+      brownsburg:
+        "In Brownsburg, we offer comprehensive and reliable plumbing services to meet our community's needs. Our qualified team ensures professional interventions 24/7, from new installations to emergency repairs, with special attention to local specificities.",
+
+      'saint-jerome':
+        'In Saint-Jérôme, our plumbing service meets the diverse needs of an expanding city. Our large team ensures rapid interventions 24/7 for all types of projects, from residential installations to complex commercial systems.',
+
+      'morin-heights':
+        "In Morin-Heights, we offer plumbing services perfectly adapted to mountainous conditions. Our experienced team ensures professional interventions 24/7, guaranteeing lasting solutions that take into account the region's particular challenges.",
+    },
   },
   en: {
+    title: 'Gore Plumbing',
+    features: 'Features',
     reviews: 'Reviews',
     reviewsSubtitle:
       'See what our satisfied customers have to say about our services.',
-
     otherLanguage: 'Français',
     description:
       "Whether it's a new installation, urgent repairs, or routine maintenance, we offer reliable, professional plumbing services for residential, commercial, and industrial clients. From unclogging drains to complex system installations, our skilled team is here 24/7 to ensure your plumbing runs smoothly. Trust us for quality, efficiency, and lasting results. Call now to experience fast, expert service tailored to your needs!",
@@ -592,5 +628,38 @@ export const siteContent = {
     copyright: '© Copyright',
     all_rights_reserved: 'All rights reserved.',
     otherCitiesWeServe: 'Other cities we serve',
+    cityDescriptions: {
+      lachute:
+        "In Lachute, we are your trusted partner for all your plumbing needs. Whether for new installations, emergency repairs, or regular maintenance, our local team provides reliable and professional services to residential, commercial, and industrial clients. Our deep understanding of Lachute's plumbing systems ensures efficient and lasting solutions.",
+
+      'wentworth-north':
+        'In Wentworth North, we understand the unique challenges of plumbing in mountainous regions. Our specialized team offers comprehensive services adapted to local conditions, from new installations to emergency repairs. Available 24/7, we ensure quick and efficient interventions, even in the most challenging winter conditions.',
+
+      'val-david':
+        "Proudly serving the Val-David community, we offer plumbing services that respect your artistic town's unique character. From drain cleaning to complex installations, our qualified team combines technical expertise with an environmentally respectful approach for all your plumbing projects.",
+
+      prevost:
+        'In Prévost, our plumbing expertise extends to all types of installations, from historic homes to new constructions. Our local team provides professional services 24/7, ensuring lasting solutions for all your residential, commercial, and industrial plumbing needs.',
+
+      gore: 'As Gore-based plumbers, we are particularly dedicated to serving our local community. Our qualified team offers comprehensive plumbing services, available 24/7 to meet all your needs. Our deep knowledge of local terrain and systems allows us to ensure efficient and lasting solutions.',
+
+      'saint-sauveur':
+        'In Saint-Sauveur, we adapt our plumbing services to the unique needs of a dynamic tourist town. Our experienced team offers professional solutions for residences, businesses, and chalets, ensuring quick and efficient interventions 24/7.',
+
+      'sainte-adele':
+        'In Sainte-Adèle, we offer plumbing services adapted to mountainous terrain challenges. Whether for an emergency or planned installation, our qualified team ensures professional interventions 24/7, guaranteeing lasting solutions for all your plumbing needs.',
+
+      piedmont:
+        'In Piedmont, our plumbing service is specially adapted to steep terrain challenges. Available 24/7, we offer professional solutions for all types of installations, from emergency repairs to regular maintenance, taking into account local particularities.',
+
+      brownsburg:
+        "In Brownsburg, we offer comprehensive and reliable plumbing services to meet our community's needs. Our qualified team ensures professional interventions 24/7, from new installations to emergency repairs, with special attention to local specificities.",
+
+      'saint-jerome':
+        'In Saint-Jérôme, our plumbing service meets the diverse needs of an expanding city. Our large team ensures rapid interventions 24/7 for all types of projects, from residential installations to complex commercial systems.',
+
+      'morin-heights':
+        "In Morin-Heights, we offer plumbing services perfectly adapted to mountainous conditions. Our experienced team ensures professional interventions 24/7, guaranteeing lasting solutions that take into account the region's particular challenges.",
+    },
   },
 }

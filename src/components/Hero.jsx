@@ -86,6 +86,13 @@ export function Hero({ citySlug = 'gore' }) {
   const isEnglish = language === 'en'
   const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
 
+  const description = t(`cityDescriptions.${citySlug}`)
+
+  const finalDescription =
+    description === `cityDescriptions.${citySlug}`
+      ? t('description')
+      : description
+
   const services = SERVICES.map((service) => ({
     id: service.id,
     title: t(`services.${service.id}.title`),
@@ -99,7 +106,7 @@ export function Hero({ citySlug = 'gore' }) {
             <h1 className="text-4xl font-medium tracking-tight text-gray-900">
               {isEnglish ? `${city} Plumbing` : `Plomberie de ${city}`}
             </h1>
-            <p className="mt-6 text-lg text-gray-600">{t('description')}</p>
+            <p className="mt-6 text-lg text-gray-600">{finalDescription}</p>
             <Button
               href={`tel:${PHONE.link}`}
               className="mt-8"

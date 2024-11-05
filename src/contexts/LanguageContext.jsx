@@ -21,27 +21,28 @@ export function LanguageProvider({ children }) {
   }
 
   const t = (key) => {
-    const keys = key.split('.')
-    let value = siteContent[language]
-
     try {
-      for (const k of keys) {
-        // Handle keys with dashes by using bracket notation
-        if (k.includes('-')) {
-          value = value[k]
-        } else {
-          value = value[k]
-        }
+      const keys = key.split('.')
+      let value = siteContent[language]
 
-        // If value is undefined at any point, return the original key
-        if (value === undefined) {
+      for (const k of keys) {
+        if (!value || typeof value !== 'object') {
+          console.warn(`Translation path broken at: ${k} for key: ${key}`)
           return key
         }
+        // Handle both regular properties and those with dashes
+        value = value[k]
       }
+
+      // If we got undefined or the value is an object (not a string/number), return the key
+      if (value === undefined || typeof value === 'object') {
+        console.warn(`No translation found for: ${key}`)
+        return key
+      }
+
       return value
     } catch (error) {
-      // If any error occurs, return the original key
-      console.warn(`Translation key not found: ${key}`)
+      console.warn(`Error getting translation for: ${key}`, error)
       return key
     }
   }
