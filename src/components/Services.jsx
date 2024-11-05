@@ -4,7 +4,7 @@ import { useId } from 'react'
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { Container } from '@/components/Container'
-import { SERVICES } from '@/lib/constants'
+import { PHONE, SERVICES } from '@/lib/constants'
 import { OtherServices } from '@/components/OtherServices'
 import Link from 'next/link'
 import { CITIES } from '@/lib/constants'
@@ -104,7 +104,18 @@ function ServiceSection({ service, image, isEven, citySlug }) {
             <p className="mt-4 text-lg text-gray-600">
               {t(`services.${service}.description`)}
             </p>
-            {!isCurrentService && (
+            {isCurrentService ? (
+              <div className="mt-8">
+                <div className="mt-8">
+                  <a
+                    href={`tel:${PHONE.link}`}
+                    className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 text-lg font-semibold text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  >
+                    {PHONE.display}
+                  </a>
+                </div>
+              </div>
+            ) : (
               <div className="mt-8">
                 <Link
                   href={getLocalizedPath(

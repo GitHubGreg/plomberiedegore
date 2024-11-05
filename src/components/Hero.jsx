@@ -115,7 +115,7 @@ export function Hero({ citySlug = 'gore' }) {
                 <Image
                   src={logo}
                   alt="Plomberie de Gore Logo"
-                  className="animate-float h-auto w-full"
+                  className="animate-float mt-12 h-auto w-full"
                   priority
                 />
               </div>
