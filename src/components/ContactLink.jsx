@@ -21,7 +21,7 @@ export function ContactLink({ type, href, children, external }) {
     <div className="group flex flex-col items-center">
       <a
         href={href}
-        className="inline-flex rounded-full bg-gray-900 p-3 transition-colors hover:bg-gray-600 group-hover:bg-gray-600"
+        className="inline-flex rounded-full bg-gradient-to-br from-[#0C5788] to-[#001847] p-3 transition-colors hover:from-[#0A4E7A] hover:to-[#001335] group-hover:from-[#0A4E7A] group-hover:to-[#001335]"
         {...linkProps}
       >
         <Icon className="h-6 w-6 text-white" />

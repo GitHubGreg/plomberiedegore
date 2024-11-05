@@ -106,16 +106,14 @@ function ServiceSection({ service, image, isEven, citySlug }) {
               {t(`services.${service}.description`)}
             </p>
             {isCurrentService ? (
-              <div className="mt-8">
-                <div className="mt-8">
-                  <a
-                    href={`tel:${PHONE.link}`}
-                    className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 text-lg font-semibold text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                  >
-                    {PHONE.display}
-                  </a>
-                </div>
-              </div>
+              <Button
+                href={`tel:${PHONE.link}`}
+                className="mt-8"
+                size="large"
+                color="blueGradient"
+              >
+                {PHONE.display}
+              </Button>
             ) : (
               <div className="mt-8">
                 <Button

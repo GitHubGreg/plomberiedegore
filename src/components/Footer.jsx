@@ -135,31 +135,27 @@ export function Footer() {
               </div>
             </div>
           </Container>
+          <div className="pb-2 pt-4">
+            <p className="text-center text-xs text-gray-400">
+              ©{new Date().getFullYear()}{' '}
+              <Link
+                href={'/'}
+                className="underline transition-colors hover:text-gray-900 hover:no-underline"
+              >
+                {t('title')}
+              </Link>
+              . {t('all_rights_reserved')}{' '}
+              <Link
+                href={getLanguageToggleHref()}
+                onClick={handleLanguageToggle}
+                className="underline hover:text-gray-900 hover:no-underline"
+              >
+                {t('otherLanguage')}
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
-
-      {/* Copyright */}
-      <Container>
-        <div className="pb-2 pt-12">
-          <p className="text-center text-sm text-gray-500">
-            ©{new Date().getFullYear()}{' '}
-            <Link
-              href={'/'}
-              className="underline transition-colors hover:text-gray-900 hover:no-underline"
-            >
-              {t('title')}
-            </Link>
-            . {t('all_rights_reserved')}{' '}
-            <Link
-              href={getLanguageToggleHref()}
-              onClick={handleLanguageToggle}
-              className="underline hover:text-gray-900 hover:no-underline"
-            >
-              {t('otherLanguage')}
-            </Link>
-          </p>
-        </div>
-      </Container>
     </footer>
   )
 }
