@@ -1,7 +1,7 @@
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import { FontProvider } from '@/components/FontProvider'
+import { Layout } from '@/components/Layout'
 import { siteContent } from '@/content/siteContent'
-
 import '@/styles/tailwind.css'
 
 export const metadata = {
@@ -14,7 +14,9 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body>
         <FontProvider>
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <Layout>{children}</Layout>
+          </LanguageProvider>
         </FontProvider>
       </body>
     </html>

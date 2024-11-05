@@ -6,7 +6,6 @@ import { Services } from '@/components/Services'
 import { OtherServices } from '@/components/OtherServices'
 import { CITIES, SERVICES } from '@/lib/constants'
 import { notFound } from 'next/navigation'
-import { Layout } from '@/components/pages/Layout'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { CityTitle } from '../CityTitle'
 
@@ -26,13 +25,11 @@ export function ServicePage({ citySlug, serviceSlug }) {
   const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
 
   return (
-    <Layout>
-      <main>
-        <CityTitle citySlug={citySlug} />
-        <Services serviceId={service.id} citySlug={citySlug} />
-        <OtherServices />
-        <CallToAction />
-      </main>
-    </Layout>
+    <main>
+      <CityTitle citySlug={citySlug} />
+      <Services serviceId={service.id} citySlug={citySlug} />
+      <OtherServices />
+      <CallToAction />
+    </main>
   )
 }

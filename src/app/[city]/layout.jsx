@@ -1,5 +1,3 @@
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
 import { CITIES } from '@/lib/constants'
 import { notFound } from 'next/navigation'
 
@@ -10,11 +8,5 @@ export default function CityLayout({ children, params }) {
     notFound()
   }
 
-  return (
-    <>
-      <Header />
-      {children}
-      <Footer />
-    </>
-  )
+  return children
 }
