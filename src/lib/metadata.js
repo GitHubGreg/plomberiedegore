@@ -3,7 +3,19 @@ import { notFound } from 'next/navigation'
 import { siteContent } from '@/content/siteContent'
 
 export async function generateHomeMetadata(isEnglish) {
-  return generateCityMetadata({ city: 'gore' }, isEnglish)
+  const canonical = isEnglish
+    ? 'https://www.plomberiedegore.com/en/gore'
+    : 'https://www.plomberiedegore.com/gore'
+  return {
+    ...(await generateCityMetadata({ city: 'gore' }, isEnglish)),
+    alternates: {
+      canonical,
+      languages: {
+        en: 'https://www.plomberiedegore.com/en/gore',
+        fr: 'https://www.plomberiedegore.com/gore',
+      },
+    },
+  }
 }
 
 export async function generateCityMetadata(params, isEnglish) {
@@ -13,6 +25,10 @@ export async function generateCityMetadata(params, isEnglish) {
   if (!city) {
     notFound()
   }
+
+  const canonical = isEnglish
+    ? `https://www.plomberiedegore.com/en/${citySlug}`
+    : `https://www.plomberiedegore.com/${citySlug}`
 
   const siteName = isEnglish ? `${city.id} Plumbing` : `Plomberie de ${city.id}`
 
@@ -28,6 +44,13 @@ export async function generateCityMetadata(params, isEnglish) {
   return {
     title,
     description,
+    alternates: {
+      canonical,
+      languages: {
+        en: `https://www.plomberiedegore.com/en/${citySlug}`,
+        fr: `https://www.plomberiedegore.com/${citySlug}`,
+      },
+    },
     openGraph: {
       title,
       description,
@@ -67,9 +90,20 @@ export async function generateServiceMetadata(params, isEnglish) {
 
   const serviceImage = `/images/services/${service.slug}.jpg`
 
+  const canonical = isEnglish
+    ? `https://www.plomberiedegore.com/en/${citySlug}/${serviceSlug}`
+    : `https://www.plomberiedegore.com/${citySlug}/${serviceSlug}`
+
   return {
     title,
     description,
+    alternates: {
+      canonical,
+      languages: {
+        en: `https://www.plomberiedegore.com/en/${citySlug}/${serviceSlug}`,
+        fr: `https://www.plomberiedegore.com/${citySlug}/${serviceSlug}`,
+      },
+    },
     openGraph: {
       title,
       description,
