@@ -91,6 +91,11 @@ function ServiceSection({ service, image, isEven, citySlug }) {
   const isCurrentService =
     params?.slug === SERVICES.find((s) => s.id === service)?.slug
 
+  // Get the city-specific description
+  const description =
+    t(`services.${service}.descriptions.${citySlug}`) ||
+    t(`services.${service}.description`)
+
   return (
     <section
       id={service}
@@ -102,9 +107,7 @@ function ServiceSection({ service, image, isEven, citySlug }) {
             <h2 className="text-3xl font-medium tracking-tight text-gray-900">
               {t(`services.${service}.title`)}{' '}
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              {t(`services.${service}.description`)}
-            </p>
+            <p className="mt-4 text-lg text-gray-600">{description}</p>
             {isCurrentService ? (
               <Button
                 href={`tel:${PHONE.link}`}

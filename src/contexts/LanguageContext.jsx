@@ -23,10 +23,27 @@ export function LanguageProvider({ children }) {
   const t = (key) => {
     const keys = key.split('.')
     let value = siteContent[language]
-    for (const k of keys) {
-      value = value[k]
+
+    try {
+      for (const k of keys) {
+        // Handle keys with dashes by using bracket notation
+        if (k.includes('-')) {
+          value = value[k]
+        } else {
+          value = value[k]
+        }
+
+        // If value is undefined at any point, return the original key
+        if (value === undefined) {
+          return key
+        }
+      }
+      return value
+    } catch (error) {
+      // If any error occurs, return the original key
+      console.warn(`Translation key not found: ${key}`)
+      return key
     }
-    return value || key
   }
 
   return (
