@@ -9,6 +9,12 @@ import { Container } from '@/components/Container'
 const reviewsContent = {
   fr: [
     {
+      title: 'Travail professionnel par de bonnes personnes',
+      body: "Je ne peux pas les recommander assez. Des professionnels gentils et extrêmement compétents. Merci Roxanne et l'équipe!",
+      author: 'Greg M.',
+      rating: 5,
+    },
+    {
       title: 'Service rapide et professionnel',
       body: "Une fuite d'eau urgente à 23h, ils sont venus en 30 minutes. Travail impeccable et prix raisonnable. Je recommande fortement!",
       author: 'Marcel T.',
@@ -70,6 +76,12 @@ const reviewsContent = {
     },
   ],
   en: [
+    {
+      title: 'Professional work by good people',
+      body: 'Cannot recommend them highly enough. Kind and extremely skilled professionals. Thanks Roxanne and team!',
+      author: 'Greg M.',
+      rating: 5,
+    },
     {
       title: 'Fast and professional service',
       body: 'Emergency water leak at 11 PM, they came within 30 minutes. Impeccable work and reasonable price. Highly recommend!',
@@ -295,7 +307,7 @@ export function Reviews() {
     <section
       id="reviews"
       aria-labelledby="reviews-title"
-      className="bg-gray-50 pb-16 pt-20 sm:pb-24 sm:pt-32"
+      className="bg-gray-50 pb-16 pt-8 sm:pb-24 sm:pt-10"
     >
       <Container>
         <h2

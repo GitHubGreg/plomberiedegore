@@ -8,6 +8,7 @@ import { CITIES, SERVICES } from '@/lib/constants'
 import { notFound } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { CityTitle } from '../CityTitle'
+import { Reviews } from '../Reviews'
 
 export function ServicePage({ citySlug, serviceSlug }) {
   const { language } = useLanguage()
@@ -29,6 +30,7 @@ export function ServicePage({ citySlug, serviceSlug }) {
       <CityTitle citySlug={citySlug} />
       <Services serviceId={service.id} citySlug={citySlug} />
       <OtherServices />
+      <Reviews />
       <CallToAction />
     </main>
   )

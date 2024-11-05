@@ -5,6 +5,7 @@ import { CallToAction } from '@/components/CallToAction'
 import { Services } from '@/components/Services'
 import { CITIES } from '@/lib/constants'
 import { notFound } from 'next/navigation'
+import { Reviews } from '../Reviews'
 
 export function CityPage({ citySlug }) {
   // Check if the city exists in our constants
@@ -16,6 +17,7 @@ export function CityPage({ citySlug }) {
     <main>
       <Hero citySlug={citySlug} />
       <Services citySlug={citySlug} />
+      <Reviews />
       <CallToAction />
     </main>
   )

@@ -47,9 +47,9 @@ export function Footer() {
   }
 
   return (
-    <footer className="border-t border-gray-200">
+    <footer>
       <Container>
-        <div className="flex min-h-[400px] flex-col gap-y-12 pb-6 pt-16 md:flex-row">
+        <div className="flex min-h-[400px] flex-col gap-y-12 pb-6 pt-24 md:flex-row">
           {/* Left side - Services for current city */}
           <div className="w-full md:mr-10 md:w-[190px] md:flex-none">
             <div className="mb-6 flex justify-center text-gray-900 md:justify-end">
@@ -132,7 +132,7 @@ export function Footer() {
             </div>
           </div>
         </Container>
-        <div className="mt-8 pb-2">
+        <div className="mt-16 pb-2">
           <p className="text-center text-xs text-gray-400">
             ©{new Date().getFullYear()}{' '}
             <Link
