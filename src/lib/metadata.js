@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { siteContent } from '@/content/siteContent'
 
 export async function generateCityMetadata(params, isEnglish) {
-  const citySlug = await params.city
+  const citySlug = params.city
   const city = CITIES.find((c) => c.slug === citySlug)
 
   if (!city) {
@@ -20,8 +20,8 @@ export async function generateCityMetadata(params, isEnglish) {
 }
 
 export async function generateServiceMetadata(params, isEnglish) {
-  const citySlug = await params.city
-  const serviceSlug = await params.slug
+  const citySlug = params.city
+  const serviceSlug = params.slug
 
   const city = CITIES.find((c) => c.slug === citySlug)
   const service = SERVICES.find((s) => s.slug === serviceSlug)

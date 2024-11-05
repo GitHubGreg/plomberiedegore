@@ -25,7 +25,7 @@ const variantStyles = {
   },
   outline: {
     white:
-      'bg-white text-gray-700 hover:border-gray-400 data-[active=true]:bg-gray-200 data-[active=true]:border-gray-200',
+      'bg-white text-gray-700 hover:border-gray-400 data-[active=true]:bg-gray-200 data-[active=true]:border-gray-400',
   },
 }
 
