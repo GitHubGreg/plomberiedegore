@@ -87,7 +87,7 @@ export function Header() {
               {({ open }) => (
                 <>
                   <PopoverButton
-                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 ui-not-focus-visible:outline-none"
+                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 transition-colors hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 ui-not-focus-visible:outline-none"
                     aria-label="Toggle site navigation"
                   >
                     {({ open }) =>
@@ -131,7 +131,7 @@ export function Header() {
                                 language === 'en' ? 'fr' : 'en',
                               )}
                               onClick={handleLanguageToggle}
-                              className="inline-flex justify-center rounded-lg border border-gray-300 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing.2)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80"
+                              className="hidden justify-center rounded-lg border border-gray-300 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing.2)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80 lg:inline-flex lg:text-xs xl:text-sm"
                             >
                               {t('otherLanguage')}
                             </Link>
@@ -158,7 +158,7 @@ export function Header() {
             </Link>
             <Button
               href={`tel:${PHONE.link}`}
-              className="hidden text-sm hover:bg-gray-600 lg:block lg:text-xs xl:text-sm"
+              className="hidden text-sm transition-colors hover:bg-gray-600 lg:block lg:text-xs xl:text-sm"
             >
               {PHONE.display}
             </Button>

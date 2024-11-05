@@ -122,7 +122,7 @@ function ServiceSection({ service, image, isEven, citySlug }) {
                     `${citySlug}/${SERVICES.find((s) => s.id === service).slug}`,
                     language,
                   )}
-                  className="inline-flex items-center rounded-lg bg-gray-900 px-6 py-3 text-sm font-semibold text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  className="inline-flex items-center rounded-lg bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
                 >
                   {isEnglish ? 'Learn more' : 'En savoir plus'}
                 </Link>

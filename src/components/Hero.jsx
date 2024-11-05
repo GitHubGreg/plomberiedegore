@@ -102,7 +102,7 @@ export function Hero({ citySlug = 'gore' }) {
             <div className="mt-8">
               <a
                 href={`tel:${PHONE.link}`}
-                className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 text-lg font-semibold text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400"
               >
                 {PHONE.display}
               </a>
@@ -133,7 +133,7 @@ export function Hero({ citySlug = 'gore' }) {
                     `${citySlug}/${SERVICES.find((s) => s.id === service.id).slug}`,
                     language,
                   )}
-                  className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
                 >
                   {service.title}
                 </Link>
