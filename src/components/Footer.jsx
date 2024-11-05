@@ -92,20 +92,18 @@ export function Footer() {
 
           {/* Right side - Other Cities */}
           <div className="w-full lg:ml-20 lg:w-fit lg:flex-none lg:border-l lg:border-gray-200 lg:pl-8">
-            <div className="mb-6 flex items-center text-gray-900">
-              <div className="mr-4 text-left">
-                <h2 className="text-base font-semibold">
-                  {t('otherCitiesWeServe')}
-                </h2>
-              </div>
+            <div className="mb-6 flex justify-end text-gray-900">
+              <h2 className="text-base font-semibold">
+                {t('otherCitiesWeServe')}
+              </h2>
             </div>
 
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col items-end gap-4">
               {otherCities.map((city) => (
                 <Link
                   key={city.id}
                   href={getLocalizedPath(city.slug, language)}
-                  className="inline-block w-fit text-sm text-gray-500 transition-colors hover:text-gray-900"
+                  className="w-fit text-sm text-gray-500 transition-colors hover:text-gray-900"
                 >
                   {city.id}
                 </Link>
@@ -116,44 +114,42 @@ export function Footer() {
       </Container>
 
       {/* Contact Section */}
-      <div className="mt-12 border-b border-t border-gray-200">
-        <div className="bg-gray-100">
-          <Container>
-            <div className="pb-4 pt-5">
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-                <ContactLink type="phone" href={`tel:${PHONE.link}`}>
-                  {PHONE.display}
-                </ContactLink>
+      <div className="mt-6">
+        <Container>
+          <div className="pb-4 pt-5">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <ContactLink type="phone" href={`tel:${PHONE.link}`}>
+                {PHONE.display}
+              </ContactLink>
 
-                <ContactLink type="email" href={`mailto:${EMAIL.link}`}>
-                  {EMAIL.display}
-                </ContactLink>
+              <ContactLink type="email" href={`mailto:${EMAIL.link}`}>
+                {EMAIL.display}
+              </ContactLink>
 
-                <ContactLink type="address" href={ADDRESS.link} external>
-                  {ADDRESS.display}
-                </ContactLink>
-              </div>
+              <ContactLink type="address" href={ADDRESS.link} external>
+                {ADDRESS.display}
+              </ContactLink>
             </div>
-          </Container>
-          <div className="pb-2 pt-4">
-            <p className="text-center text-xs text-gray-400">
-              ©{new Date().getFullYear()}{' '}
-              <Link
-                href={'/'}
-                className="underline transition-colors hover:text-gray-900 hover:no-underline"
-              >
-                {t('title')}
-              </Link>
-              . {t('all_rights_reserved')}{' '}
-              <Link
-                href={getLanguageToggleHref()}
-                onClick={handleLanguageToggle}
-                className="underline hover:text-gray-900 hover:no-underline"
-              >
-                {t('otherLanguage')}
-              </Link>
-            </p>
           </div>
+        </Container>
+        <div className="mt-8 pb-2">
+          <p className="text-center text-xs text-gray-400">
+            ©{new Date().getFullYear()}{' '}
+            <Link
+              href={'/'}
+              className="underline transition-colors hover:text-gray-900 hover:no-underline"
+            >
+              {t('title')}
+            </Link>
+            . {t('all_rights_reserved')}{' '}
+            <Link
+              href={getLanguageToggleHref()}
+              onClick={handleLanguageToggle}
+              className="underline hover:text-gray-900 hover:no-underline"
+            >
+              {t('otherLanguage')}
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
