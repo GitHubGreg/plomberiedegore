@@ -49,20 +49,20 @@ export function Footer() {
   return (
     <footer className="border-t border-gray-200">
       <Container>
-        <div className="flex min-h-[400px] flex-col gap-y-12 pb-6 pt-16 lg:flex-row">
+        <div className="flex min-h-[400px] flex-col gap-y-12 pb-6 pt-16 md:flex-row">
           {/* Left side - Services for current city */}
-          <div className="w-full lg:mr-10 lg:w-[190px] lg:flex-none">
-            <div className="mb-6 flex items-center text-gray-900">
-              <div className="mr-4 text-left">
-                <Link href={`/${citySlug}`} className="text-base font-semibold">
+          <div className="w-full md:mr-10 md:w-[190px] md:flex-none">
+            <div className="mb-6 flex justify-center text-gray-900 md:justify-end">
+              <h2 className="text-base font-semibold">
+                <Link href={`/${citySlug}`} className="">
                   {isEnglish
                     ? `Plumbing services in ${currentCity}`
                     : `Services de plomberie à ${currentCity}`}
                 </Link>
-              </div>
+              </h2>
             </div>
 
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col items-center gap-4 md:items-start">
               {SERVICES.map((service) => (
                 <Link
                   key={service.id}
@@ -79,9 +79,9 @@ export function Footer() {
           </div>
 
           {/* Center - Map */}
-          <div className="h-[400px] w-full flex-1 lg:h-auto">
+          <div className="h-[400px] w-full flex-1 md:h-auto">
             <iframe
-              className="h-[400px] w-full rounded-lg lg:h-full"
+              className="h-[400px] w-full rounded-lg md:h-full"
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
@@ -91,14 +91,14 @@ export function Footer() {
           </div>
 
           {/* Right side - Other Cities */}
-          <div className="w-full lg:ml-20 lg:w-fit lg:flex-none lg:border-l lg:border-gray-200 lg:pl-8">
-            <div className="mb-6 flex justify-end text-gray-900">
+          <div className="w-full md:ml-10 md:w-[190px] md:flex-none">
+            <div className="mb-6 flex justify-center text-gray-900 md:justify-end">
               <h2 className="text-base font-semibold">
                 {t('otherCitiesWeServe')}
               </h2>
             </div>
 
-            <nav className="flex flex-col items-end gap-4">
+            <nav className="flex flex-col items-center gap-4 md:items-end">
               {otherCities.map((city) => (
                 <Link
                   key={city.id}
