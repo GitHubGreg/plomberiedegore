@@ -6,6 +6,7 @@ import { Container } from '@/components/Container'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { SERVICES, CITIES } from '@/lib/constants'
 import { getLocalizedPath } from '@/lib/utils'
+import { Button } from './Button'
 
 export function OtherServices() {
   const { t, language } = useLanguage()
@@ -33,13 +34,15 @@ export function OtherServices() {
       </h2>
       <div className="mt-8 flex flex-wrap gap-x-4 gap-y-4">
         {otherServices.map((service) => (
-          <Link
+          <Button
             key={service.id}
             href={getLocalizedPath(`${citySlug}/${service.slug}`, language)}
-            className="rounded-lg bg-gray-100 px-4 py-2 text-sm text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+            size="small"
+            color="white"
+            variant="outline"
           >
             {service.title}
-          </Link>
+          </Button>
         ))}
       </div>
     </Container>

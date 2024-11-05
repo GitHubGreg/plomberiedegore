@@ -154,6 +154,7 @@ export function Header() {
               onClick={handleLanguageToggle}
               color="white"
               variant="outline"
+              size="small"
               className="hidden justify-center text-sm lg:inline-flex lg:text-xs xl:text-sm"
             >
               {t('otherLanguage')}
@@ -161,6 +162,7 @@ export function Header() {
             <Button
               href={`tel:${PHONE.link}`}
               color="gray"
+              size="small"
               className="hidden text-sm transition-colors lg:block lg:text-xs xl:text-sm"
             >
               {PHONE.display}

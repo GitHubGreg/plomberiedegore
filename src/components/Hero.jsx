@@ -123,16 +123,18 @@ export function Hero({ citySlug = 'gore' }) {
             </h2>
             <div className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-4 gap-y-4 lg:mx-0 lg:justify-start">
               {services.map((service) => (
-                <Link
+                <Button
                   key={service.id}
                   href={getLocalizedPath(
                     `${citySlug}/${SERVICES.find((s) => s.id === service.id).slug}`,
                     language,
                   )}
-                  className="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  size="small"
+                  color="white"
+                  variant="outline"
                 >
                   {service.title}
-                </Link>
+                </Button>
               ))}
             </div>
           </div>

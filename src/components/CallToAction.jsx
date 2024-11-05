@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 import { Container } from '@/components/Container'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { CITIES, PHONE } from '@/lib/constants'
+import { Button } from './Button'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -70,14 +71,14 @@ export function CallToAction() {
           <p className="mt-4 text-lg text-gray-300">
             {t('callToAction.description')}
           </p>
-          <div className="mt-8">
-            <a
-              href={`tel:${PHONE.link}`}
-              className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-lg font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400/80"
-            >
-              {PHONE.display}
-            </a>
-          </div>
+          <Button
+            className="mt-8"
+            href={`tel:${PHONE.link}`}
+            size="large"
+            color="white"
+          >
+            {PHONE.display}
+          </Button>
         </div>
       </Container>
     </section>

@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { CITIES } from '@/lib/constants'
 import { useParams } from 'next/navigation'
 import { getLocalizedPath } from '@/lib/utils'
+import { Button } from './Button'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -82,7 +83,7 @@ function BackgroundIllustration(props) {
 
 function ServiceSection({ service, image, isEven, citySlug }) {
   const { t, language } = useLanguage()
-  const isEnglish = t('login') === 'Français'
+  const isEnglish = language === 'en'
   const city = CITIES.find((c) => c.slug === citySlug)?.id || 'Gore'
   const params = useParams()
 
@@ -117,15 +118,17 @@ function ServiceSection({ service, image, isEven, citySlug }) {
               </div>
             ) : (
               <div className="mt-8">
-                <Link
+                <Button
                   href={getLocalizedPath(
                     `${citySlug}/${SERVICES.find((s) => s.id === service).slug}`,
                     language,
                   )}
-                  className="inline-flex items-center rounded-lg bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  size="small"
+                  color="gray"
+                  variant="solid"
                 >
                   {isEnglish ? 'Learn more' : 'En savoir plus'}
-                </Link>
+                </Button>
               </div>
             )}
           </div>

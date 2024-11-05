@@ -9,6 +9,7 @@ const baseStyles = {
 }
 
 const sizeStyles = {
+  xsmall: 'py-2 px-3 text-xs',
   small: 'py-2 px-3 text-sm',
   medium: 'py-2.5 px-4 text-sm lg:text-xs xl:text-sm',
   large: 'py-4 px-8 text-lg',
@@ -17,18 +18,21 @@ const sizeStyles = {
 const variantStyles = {
   solid: {
     cyan: 'relative overflow-hidden bg-cyan-500 text-white before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-white/10 active:bg-cyan-600 active:text-white/80 before:transition-colors',
-    white:
-      'bg-white text-cyan-900 hover:bg-white/90 active:bg-white/90 active:text-cyan-900/70 transition-colors',
-    gray: 'bg-gray-900 text-white hover:bg-gray-600 active:bg-gray-600 active:text-white/80 transition-colors',
+    gray: 'bg-gray-900 text-white hover:bg-gray-600 active:bg-gray-600 active:text-white/80',
   },
   outline: {
-    gray: 'border-gray-300 text-gray-700 hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80 transition-colors',
+    gray: 'border-gray-300 text-gray-700 hover:border-gray-400 data-[active=true]:bg-gray-200 data-[active=true]:border-gray-200',
     white:
-      'bg-white text-gray-700 hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80 transition-colors',
+      'bg-white text-gray-700 hover:border-gray-400 data-[active=true]:bg-gray-200 data-[active=true]:border-gray-200',
   },
 }
 
-export function Button({ className, size = 'medium', ...props }) {
+export function Button({
+  className,
+  size = 'medium',
+  isActive = false,
+  ...props
+}) {
   props.variant ??= 'solid'
   props.color ??= 'gray'
 
@@ -43,9 +47,15 @@ export function Button({ className, size = 'medium', ...props }) {
     className,
   )
 
+  const buttonProps = {
+    ...props,
+    className,
+    'data-active': isActive,
+  }
+
   return typeof props.href === 'undefined' ? (
-    <button className={className} {...props} />
+    <button {...buttonProps} />
   ) : (
-    <Link className={className} {...props} />
+    <Link {...buttonProps} />
   )
 }
