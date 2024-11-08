@@ -9,6 +9,7 @@ import { notFound } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { CityTitle } from '../CityTitle'
 import { Reviews } from '../Reviews'
+import { Footer } from '../Footer'
 
 export function ServicePage({ citySlug, serviceSlug }) {
   const { language } = useLanguage()
@@ -32,6 +33,7 @@ export function ServicePage({ citySlug, serviceSlug }) {
       <OtherServices />
       <Reviews />
       <CallToAction />
+      <Footer />
     </main>
   )
 }

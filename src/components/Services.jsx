@@ -11,75 +11,7 @@ import { CITIES } from '@/lib/constants'
 import { useParams } from 'next/navigation'
 import { getLocalizedPath } from '@/lib/utils'
 import { Button } from './Button'
-
-function BackgroundIllustration(props) {
-  let id = useId()
-
-  return (
-    <div {...props}>
-      <svg
-        viewBox="0 0 500 500"
-        fill="none"
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full animate-spin-slow"
-      >
-        <path
-          d="M250 250m-200 0a200 200 0 1 0 400 0a200 200 0 1 0 -400 0"
-          stroke="#D4D4D4"
-          strokeOpacity="0.7"
-        />
-        <path
-          d="M250 50A200 200 0 0 1 250 450"
-          stroke={`url(#${id}-gradient-1)`}
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient
-            id={`${id}-gradient-1`}
-            x1="250"
-            y1="50"
-            x2="250"
-            y2="450"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <svg
-        viewBox="0 0 500 500"
-        fill="none"
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full animate-spin-reverse-slower"
-      >
-        <path
-          d="M250 250m-150 0a150 150 0 1 0 300 0a150 150 0 1 0 -300 0"
-          stroke="#D4D4D4"
-          strokeOpacity="0.7"
-        />
-        <path
-          d="M250 100A150 150 0 0 1 250 400"
-          stroke={`url(#${id}-gradient-2)`}
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient
-            id={`${id}-gradient-2`}
-            x1="250"
-            y1="100"
-            x2="250"
-            y2="400"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-  )
-}
+import { BackgroundIllustration } from './BackgroundIllustration'
 
 function ServiceSection({ service, image, isEven, citySlug }) {
   const { t, language } = useLanguage()
