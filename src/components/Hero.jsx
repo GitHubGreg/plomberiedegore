@@ -2,13 +2,10 @@
 
 import { useId } from 'react'
 import Image from 'next/image'
-import clsx from 'clsx'
-import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { SERVICES, CITIES, PHONE } from '@/lib/constants'
-import logo from '@/images/logo.svg'
 import { getLocalizedPath } from '@/lib/utils'
 import { Button } from './Button'
 
@@ -121,8 +118,10 @@ export function Hero({ citySlug = 'gore' }) {
             <div className="-mx-4 px-9 [mask-image:linear-gradient(to_bottom,white_60%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-bottom-20 lg:-top-10 lg:px-0 lg:pt-10 xl:-bottom-32">
               <div className="mx-auto flex max-w-[366px] items-center justify-center">
                 <Image
-                  src={logo}
+                  src="/images/logo.svg"
                   alt={isEnglish ? `${city} Plumbing` : `Plomberie de ${city}`}
+                  width={200}
+                  height={200}
                   className="animate-float mt-8 h-auto w-full"
                   priority
                 />

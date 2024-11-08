@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Container } from '@/components/Container'
-import logo from '@/images/logo.svg'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { CITIES } from '@/lib/constants'
 
@@ -19,19 +18,11 @@ export function CityTitle({ citySlug = 'gore' }) {
   return (
     <div className="pt-12">
       <Container>
-        <div className="flex items-center justify-center gap-4 transition-all">
-          <Image
-            src={logo}
-            alt="Logo"
-            className="h-12 w-12"
-            width={48}
-            height={48}
-            priority
-          />
+        <div className="flex items-center justify-start gap-4 transition-all lg:justify-center">
           <Link href={homeUrl}>
             <h1 className="text-4xl font-medium tracking-tight text-gray-900 transition-all hover:text-gray-600">
               {title}
-            </h1>{' '}
+            </h1>
           </Link>
         </div>
       </Container>

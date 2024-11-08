@@ -13,7 +13,7 @@ export function QRCode() {
         // Generate Canvas version
         QRCodeLib.toCanvas(
           canvasRef.current,
-          'https://plomberiedegore.com',
+          'https://www.plomberiedegore.com',
           {
             width: 200,
             margin: 2,
@@ -30,7 +30,7 @@ export function QRCode() {
         // Generate high-res PNG
         try {
           const pngUrl = await QRCodeLib.toDataURL(
-            'https://plomberiedegore.com',
+            'https://www.plomberiedegore.com',
             {
               width: 1000,
               margin: 2,
