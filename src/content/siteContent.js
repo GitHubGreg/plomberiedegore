@@ -312,6 +312,12 @@ export const siteContent = {
     copyright: "Droits d'auteur",
     all_rights_reserved: 'Tous droits réservés.',
     otherCitiesWeServe: 'Autres villes desservies',
+    notFound: {
+      title: 'Page non trouvée',
+      message: "Désolé, nous n'avons pas pu trouver la page que vous cherchez.",
+      button: "Retour à la page d'accueil",
+    },
+
     cityDescriptions: {
       lachute:
         "À Lachute, nous sommes votre partenaire de confiance pour tous vos besoins en plomberie. Que ce soit pour une installation neuve, des réparations urgentes ou de l'entretien régulier, notre équipe locale offre des services fiables et professionnels aux clients résidentiels, commerciaux et industriels. Notre connaissance approfondie des systèmes de plomberie de Lachute nous permet d'assurer des solutions efficaces et durables.",
@@ -659,6 +665,11 @@ export const siteContent = {
     copyright: '© Copyright',
     all_rights_reserved: 'All rights reserved.',
     otherCitiesWeServe: 'Other cities we serve',
+    notFound: {
+      title: 'Page not found',
+      message: 'Sorry, we couldn’t find the page you’re looking for.',
+      button: 'Go back home',
+    },
     cityDescriptions: {
       lachute:
         "In Lachute, we are your trusted partner for all your plumbing needs. Whether for new installations, emergency repairs, or regular maintenance, our local team provides reliable and professional services to residential, commercial, and industrial clients. Our deep understanding of Lachute's plumbing systems ensures efficient and lasting solutions.",
